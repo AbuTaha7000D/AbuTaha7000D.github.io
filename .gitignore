@@ -1,0 +1,45 @@
+# OS artifacts
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor artifacts
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*~
+
+# Node (if any tooling is added in future)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Environment / Secrets
+.env
+.env.*
+*.local
+
+# Logs
+*.log
+
+# Build output (not applicable currently, but safe to include)
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
