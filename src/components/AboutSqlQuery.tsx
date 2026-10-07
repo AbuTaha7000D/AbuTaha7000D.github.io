@@ -104,7 +104,7 @@ export function AboutSqlQuery() {
 							{/* Portrait Frame with deliberate technical aspect ratio & intentional crop */}
 							<div className={`relative aspect-[4/4.6] w-full overflow-hidden ${surfaceSubtle} border-b ${borderMain}`}>
 								<Image
-									src="/mahmoudehab/images/profile.png"
+									src="/images/profile.png"
 									alt="Portrait of Mahmoud Ehab, Data Analyst & Data Engineer"
 									fill
 									sizes="(max-width: 639px) calc(100vw - 2.5rem), (max-width: 1023px) 440px, (max-width: 1279px) 380px, 400px"

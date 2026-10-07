@@ -4,9 +4,6 @@ const nextConfig = {
 	// Required for GitHub Pages (static file hosting — no Node.js runtime).
 	output: 'export',
 
-	// This repository is deployed as a project site under /mahmoudehab.
-	basePath: '/mahmoudehab',
-
 	// Append trailing slashes so each route becomes out/<route>/index.html.
 	// Prevents 404s when GitHub Pages serves directory URLs.
 	trailingSlash: true,
@@ -18,4 +15,3 @@ const nextConfig = {
 };
 
 export default nextConfig;
-

@@ -183,7 +183,7 @@ export function HeroPipeline() {
 							</a>
 
 							<a
-								href="/mahmoudehab/cv/Mahmoud_Ehab_CV_2026.pdf"
+								href="/cv/Mahmoud_Ehab_CV_2026.pdf"
 								download
 								className={`inline-flex items-center gap-2 rounded-[4px] border ${borderStrong} ${surfaceCard} px-5 py-2.5 font-mono-code text-xs uppercase tracking-[0.1em] font-medium ${textSecondary} transition-colors duration-150 focus-visible:outline-2 ${dark ? 'hover:border-[#3b82f6]/60 hover:text-white focus-visible:outline-[#3b82f6]' : 'hover:border-[#1d4ed8] hover:bg-[#1d4ed8] hover:text-white focus-visible:outline-[#1d4ed8] active:border-[#1e40af] active:bg-[#1e40af] active:text-white'}`}
 							>

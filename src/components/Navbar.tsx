@@ -13,7 +13,7 @@ const sections = navigationData.map((item, index) => ({
 	label: item.label[0] + item.label.slice(1).toLowerCase(),
 }));
 
-const cvPath = '/mahmoudehab/cv/Mahmoud_Ehab_CV_2026.pdf';
+const cvPath = '/cv/Mahmoud_Ehab_CV_2026.pdf';
 
 export function Navbar() {
 	const { theme, toggleTheme } = useTheme();
