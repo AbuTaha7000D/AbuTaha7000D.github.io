@@ -1,0 +1,414 @@
+@import "tailwindcss";
+
+/* Tailwind v4 dark mode variant — enables dark: utilities with .dark class */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+	/* Font families */
+	--font-sans: var(--font-geist-sans), system-ui, sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+	/* Blue accent ramp for data infrastructure interface */
+	--color-accent-50: #eff6ff;
+	--color-accent-100: #dbeafe;
+	--color-accent-200: #bfdbfe;
+	--color-accent-300: #93c5fd;
+	--color-accent-400: #60a5fa;
+	--color-accent-500: #3b82f6;
+	--color-accent-600: #2563eb;
+	--color-accent-700: #1d4ed8;
+	--color-accent-800: #1e40af;
+	--color-accent-900: #1e3a8a;
+
+	/* Accent as Tailwind color (enables bg-accent, text-accent, border-accent + opacity modifiers) */
+	--color-accent: var(--accent);
+	--color-accent-soft: var(--accent-soft);
+	--color-surface: var(--bg);
+	--color-soft: var(--bg-soft);
+	--color-card: var(--bg-card);
+
+	/* Custom animations (from template) */
+	--animate-flow-dash: flow-dash 1.2s linear infinite;
+	--animate-flow-dash-rev: flow-dash-rev 1.2s linear infinite;
+	--animate-pulse-node: pulse-node 2.4s ease-in-out infinite;
+	--animate-drift-up: drift-up 0.6s ease-out both;
+	--animate-ticker: ticker 14s linear infinite;
+	--animate-bar-rise: bar-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Keyframes — defined outside @theme so they are always available */
+@keyframes flow-dash {
+	to {
+		stroke-dashoffset: -24;
+	}
+}
+
+@keyframes flow-dash-rev {
+	to {
+		stroke-dashoffset: 24;
+	}
+}
+
+@keyframes pulse-node {
+
+	0%,
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	50% {
+		opacity: 0.5;
+		transform: scale(0.9);
+	}
+}
+
+@keyframes drift-up {
+	0% {
+		transform: translateY(8px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes ticker {
+	0% {
+		transform: translateY(0);
+	}
+
+	100% {
+		transform: translateY(-50%);
+	}
+}
+
+@keyframes bar-rise {
+	0% {
+		transform: scaleY(0);
+	}
+
+	100% {
+		transform: scaleY(1);
+	}
+}
+
+@layer base {
+	:root {
+		/* === Unified portfolio variables === */
+		--bg-primary: #f8fafc;
+		--bg-secondary: #ffffff;
+		--bg-card: #ffffff;
+		--bg-card-hover: #f1f5f9;
+		--bg-terminal: #0b0e14;
+		--border-color: #e2e8f0;
+		--border-subtle: #cbd5e1;
+		--border-accent: #2563eb;
+
+		--text-primary: #0f172a;
+		--text-secondary: #334155;
+		--text-muted: #64748b;
+		--text-accent: #1d4ed8;
+
+		--accent-cyan: #2563eb;
+		--accent-emerald: #16805b;
+		--accent-violet: #7450a8;
+		--accent-amber: #a96714;
+
+		--grid-color: rgba(15, 23, 42, 0.04);
+		--glow-color: rgba(37, 99, 235, 0.12);
+		--terminal-header: #1e293b;
+		--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+		--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+		/* === Template design tokens === */
+		--bg: #f8fafc;
+		--bg-soft: #f1f5f9;
+		--border: #e2e8f0;
+		--border-soft: #f1f5f9;
+		--text: #0f172a;
+		--text-faint: #94a3b8;
+		--accent: #2563eb;
+		--accent-soft: rgba(37, 99, 235, 0.08);
+		--accent-line: rgba(37, 99, 235, 0.3);
+		--grid: rgba(15, 23, 42, 0.04);
+	}
+
+	.dark {
+		/* === Unified portfolio variables (Kube Labs dark blue-black) === */
+		--bg-primary: #0b0e14;
+		--bg-secondary: #10141d;
+		--bg-card: #10141d;
+		--bg-card-hover: #131824;
+		--bg-terminal: #0b0e14;
+		--border-color: #212836;
+		--border-subtle: #2e3748;
+		--border-accent: #3b82f6;
+
+		--text-primary: #e6e9ef;
+		--text-secondary: #c7cdd9;
+		--text-muted: #8a93a6;
+		--text-accent: #60a5fa;
+
+		--accent-cyan: #60a5fa;
+		--accent-emerald: #34d399;
+		--accent-violet: #a78bfa;
+		--accent-amber: #fbbf24;
+
+		--grid-color: rgba(230, 233, 239, 0.035);
+		--glow-color: rgba(59, 130, 246, 0.15);
+		--terminal-header: #10141d;
+		--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+		--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+
+		/* === Template design tokens === */
+		--bg: #0b0e14;
+		--bg-soft: #131824;
+		--border: #212836;
+		--border-soft: #212836;
+		--text: #e6e9ef;
+		--text-faint: #7b8494;
+		--accent: #3b82f6;
+		--accent-soft: rgba(59, 130, 246, 0.12);
+		--accent-line: rgba(59, 130, 246, 0.35);
+		--grid: rgba(230, 233, 239, 0.035);
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		background-color: var(--bg-primary);
+		color: var(--text-primary);
+		font-family: var(--font-geist-sans, system-ui, sans-serif);
+		-webkit-font-smoothing: antialiased;
+		transition: background-color 0.3s ease, color 0.3s ease;
+	}
+
+	::selection {
+		background: var(--accent);
+		color: var(--bg-primary);
+	}
+
+	a:focus-visible,
+	button:focus-visible,
+	input:focus-visible,
+	textarea:focus-visible,
+	select:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 3px;
+	}
+}
+
+section[id] {
+	scroll-margin-top: 4.5rem;
+}
+
+/* === Existing utilities (preserved) === */
+
+/* Background Grid Pattern */
+.bg-grid-pattern {
+	background-size: 32px 32px;
+	background-image:
+		linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+		linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+}
+
+/* Monospace font utility */
+.font-mono-code {
+	font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);
+}
+
+/* Technical Glow Effect */
+.glow-cyan {
+	box-shadow: 0 0 20px -5px var(--glow-color);
+}
+
+/* Custom Scrollbar for Terminals & Modals */
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--border-subtle);
+	border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--text-muted);
+}
+
+/* === Existing animations (preserved) === */
+
+/* Pipeline Animated Data Packet */
+@keyframes flowPacket {
+	0% {
+		offset-distance: 0%;
+		opacity: 0;
+	}
+
+	10% {
+		opacity: 1;
+	}
+
+	90% {
+		opacity: 1;
+	}
+
+	100% {
+		offset-distance: 100%;
+		opacity: 0;
+	}
+}
+
+@keyframes pulseGlow {
+
+	0%,
+	100% {
+		opacity: 0.4;
+		transform: scale(1);
+	}
+
+	50% {
+		opacity: 0.8;
+		transform: scale(1.03);
+	}
+}
+
+.animate-pulse-glow {
+	animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* === Template utilities (new) === */
+
+@layer components {
+
+	/* Surface utilities */
+	.bg-surface {
+		background-color: var(--bg);
+	}
+
+	.bg-soft {
+		background-color: var(--bg-soft);
+	}
+
+	.bg-card {
+		background-color: var(--bg-card);
+	}
+
+	.border-line {
+		border-color: var(--border);
+	}
+
+	.border-soft {
+		border-color: var(--border-soft);
+	}
+
+	.text-primary {
+		color: var(--text);
+	}
+
+	.text-muted {
+		color: var(--text-muted);
+	}
+
+	.text-faint {
+		color: var(--text-faint);
+	}
+
+	/* Data grid background */
+	.data-grid {
+		background-image:
+			linear-gradient(to right, var(--grid) 1px, transparent 1px),
+			linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+		background-size: 44px 44px;
+	}
+
+	/* Mono utility */
+	.mono {
+		font-family: var(--font-mono), ui-monospace, monospace;
+		font-feature-settings: "tnum";
+	}
+
+	/* Animated flow line for SVG connectors */
+	.flow-line {
+		stroke: var(--accent);
+		stroke-dasharray: 6 6;
+		animation: flow-dash 1.2s linear infinite;
+	}
+
+	/* Scroll reveal */
+	.reveal {
+		opacity: 1;
+		transform: none;
+	}
+
+	.reveal.is-ready {
+		opacity: 0;
+		transform: translateY(28px);
+		transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+			transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	.reveal.is-ready.is-in {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	/* Table row grid */
+	.table-row-grid {
+		display: grid;
+		align-items: center;
+	}
+
+	/* Hover lift effect */
+	.hover-lift {
+		transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+			border-color 0.25s ease,
+			box-shadow 0.25s ease;
+	}
+
+	.hover-lift:hover {
+		transform: translateY(-4px);
+		border-color: var(--accent-line);
+		box-shadow: 0 0 0 1px var(--accent-line), 0 18px 40px -24px var(--accent);
+	}
+
+	/* Thin scrollbar */
+	.scrollbar-thin::-webkit-scrollbar {
+		height: 6px;
+		width: 6px;
+	}
+
+	.scrollbar-thin::-webkit-scrollbar-thumb {
+		background: var(--border);
+		border-radius: 999px;
+	}
+}
+
+/* Reduced Motion Mode Support */
+@media (prefers-reduced-motion: reduce) {
+
+	*,
+	::before,
+	::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+
+	.reveal,
+	.reveal.is-ready {
+		opacity: 1;
+		transform: none;
+	}
+}

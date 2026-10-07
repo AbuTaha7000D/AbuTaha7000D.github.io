@@ -1,25 +1,7 @@
-# Mahmoud Ehab | Portfolio
+# Mahmoud Ehab
 
-A personal portfolio website showcasing my experience, projects, and certifications as an IT Support Engineer and Computer Engineer.
+Personal portfolio for me
 
-## Live Site
+Live portfolio: <https://abutaha7000d.github.io/>
 
-<https://abutaha7000d.github.io/portfolio/>
-
-## Run Locally
-
-No build tools required. Open `index.html` in a browser, or use a local server:
-
-```bash
-# Python
-python3 -m http.server 8000
-
-# Node.js (npx)
-npx serve .
-```
-
-Then visit `http://localhost:8000`.
-
-## License
-
-[MIT](LICENSE)
+Built with Next.js, React, TypeScript, and Tailwind CSS.

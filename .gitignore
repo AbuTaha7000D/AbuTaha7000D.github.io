@@ -1,45 +1,27 @@
-# OS artifacts
+# dependencies
+/node_modules/
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-Thumbs.db
-ehthumbs.db
-Desktop.ini
+*.pem
 
-# Editor artifacts
-.vscode/
-.idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-*.swp
-*~
-
-# Node (if any tooling is added in future)
-node_modules/
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
-yarn.lock
+.pnpm-debug.log*
 
-# Environment / Secrets
-.env
-.env.*
-*.local
+# env files
+.env*
+!.env.example
 
-# Logs
-*.log
-
-# Build output (not applicable currently, but safe to include)
-dist/
-build/
-
-# Temporary files
-*.tmp
-*.bak
-*.orig
+# typescript
+*.tsbuildinfo
+next-env.d.ts
