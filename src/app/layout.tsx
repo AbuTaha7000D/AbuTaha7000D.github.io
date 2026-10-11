@@ -91,9 +91,32 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<head>
 				<meta name="theme-color" content="#0b0e14" />
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `
+				(function () {
+					try {
+						var stored = null;
+						try { stored = localStorage.getItem('theme'); } catch (e) {}
+						var isDark =
+							stored === 'dark' ? true :
+							stored === 'light' ? false :
+							typeof window.matchMedia === 'function'
+								? window.matchMedia('(prefers-color-scheme: dark)').matches
+								: true;
+						var root = document.documentElement;
+						root.classList.toggle('dark', isDark);
+						root.style.colorScheme = isDark ? 'dark' : 'light';
+						var meta = document.querySelector('meta[name="theme-color"]');
+						if (meta) meta.setAttribute('content', isDark ? '#0b0e14' : '#f8fafc');
+					} catch (e) {}
+				})();
+			`,
+					}}
+				/>
 			</head>
 			<body
 				className={`${geist.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} antialiased min-h-screen`}
