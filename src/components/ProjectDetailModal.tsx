@@ -104,7 +104,7 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
 					<button
 						ref={closeButtonRef}
 						onClick={onClose}
-						className="p-2 rounded bg-[var(--bg-card)] border border-[var(--border-color)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--border-accent)] transition-all ml-4"
+						className="p-2 rounded bg-[var(--bg-card)] border border-[var(--border-color)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--border-accent)] transition-all duration-300 ml-4"
 						aria-label="Close project details"
 					>
 						<X className="w-5 h-5" />

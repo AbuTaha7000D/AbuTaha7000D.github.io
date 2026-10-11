@@ -67,14 +67,14 @@ export function ContactApiRequest() {
 		}
 	};
 
-	const inputClass = "w-full min-h-11 rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-primary)] px-3.5 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b82f6] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-card)] transition-colors";
+	const inputClass = "w-full min-h-11 rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-primary)] px-3.5 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b82f6] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-card)] transition-colors duration-300";
 	const labelClass = "mb-1.5 block text-xs font-medium text-[var(--text-secondary)]";
-	const socialLinkClass = "inline-flex min-h-11 items-center gap-2 border-b border-[var(--border-color)]/70 py-2 font-mono-code text-xs uppercase tracking-[0.08em] text-[var(--text-secondary)] transition-colors hover:text-[#1d4ed8] dark:hover:text-[#60a5fa] hover:border-[#3b82f6]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b82f6] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)]";
+	const socialLinkClass = "inline-flex min-h-11 items-center gap-2 border-b border-[var(--border-color)]/70 py-2 font-mono-code text-xs uppercase tracking-[0.08em] text-[var(--text-secondary)] transition-colors duration-300 hover:text-[#1d4ed8] dark:hover:text-[#60a5fa] hover:border-[#3b82f6]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b82f6] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)]";
 
 	return (
 		<section
 			id="contact"
-			className="relative border-b border-[var(--border-color)] bg-[var(--bg-primary)] py-20 transition-colors duration-200 sm:py-24 lg:py-28"
+			className="relative border-b border-[var(--border-color)] bg-[var(--bg-primary)] py-20 transition-colors duration-300 sm:py-24 lg:py-28"
 		>
 			<div className="mx-auto max-w-[1200px] px-5 lg:px-8">
 				<header className="mb-10 border-b border-[var(--border-color)] pb-7 sm:mb-12 sm:pb-8 lg:mb-14">
@@ -104,7 +104,7 @@ export function ContactApiRequest() {
 							<a
 								href={`mailto:${profileData.email}`}
 								aria-label={`Email Mahmoud at ${profileData.email}`}
-								className="group mt-2 inline-flex max-w-full items-start gap-2 text-lg font-semibold leading-snug tracking-[-0.02em] text-[var(--text-primary)] transition-colors hover:text-[#1d4ed8] dark:hover:text-[#60a5fa] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b82f6] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--bg-primary)] sm:text-xl"
+								className="group mt-2 inline-flex max-w-full items-start gap-2 text-lg font-semibold leading-snug tracking-[-0.02em] text-[var(--text-primary)] transition-colors duration-300 hover:text-[#1d4ed8] dark:hover:text-[#60a5fa] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b82f6] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--bg-primary)] sm:text-xl"
 							>
 								<span className="break-all">{profileData.email}</span>
 								<ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-[#2563eb] dark:text-[#60a5fa]" aria-hidden="true" />
@@ -215,7 +215,7 @@ export function ContactApiRequest() {
 								<button
 									type="submit"
 									disabled={status === 'submitting'}
-									className="inline-flex min-h-11 items-center justify-center gap-2 rounded-[4px] bg-[#2563eb] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d4ed8] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b82f6] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-card)]"
+									className="inline-flex min-h-11 items-center justify-center gap-2 rounded-[4px] bg-[#2563eb] px-4 py-2.5 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#1d4ed8] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b82f6] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-card)]"
 								>
 									{status === 'submitting' ? 'Sending…' : 'Send message'}
 									{status === 'submitting' ? null : <Send className="h-4 w-4" aria-hidden="true" />}

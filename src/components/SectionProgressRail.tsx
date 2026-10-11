@@ -107,7 +107,7 @@ export function SectionProgressRail() {
 					onClick={returnToTop}
 					className="group/top relative flex items-center focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#3b82f6] rounded-xs"
 				>
-					<span className="grid h-9 w-9 place-items-center rounded-xs border border-[var(--border-color)] bg-[var(--bg-card)] text-[#2563eb] dark:text-[#60a5fa] transition-colors duration-150 hover:border-[#3b82f6]/60 hover:bg-[var(--bg-card-hover)]">
+					<span className="grid h-9 w-9 place-items-center rounded-xs border border-[var(--border-color)] bg-[var(--bg-card)] text-[#2563eb] dark:text-[#60a5fa] transition-colors duration-300 hover:border-[#3b82f6]/60 hover:bg-[var(--bg-card-hover)]">
 						<ArrowUp aria-hidden="true" className="h-4 w-4" />
 					</span>
 					<span className="absolute left-full ml-2.5 top-1/2 -translate-y-1/2 font-mono-code text-[11px] uppercase tracking-[0.08em] opacity-0 -translate-x-1.5 transition-all duration-150 group-hover/top:opacity-100 group-hover/top:translate-x-0 group-focus-visible/top:opacity-100 group-focus-visible/top:translate-x-0 whitespace-nowrap text-[var(--text-secondary)] pointer-events-none">

@@ -15,7 +15,7 @@ export function AboutSqlQuery() {
 	return (
 		<section
 			id="about"
-			className="relative overflow-hidden border-b border-[var(--border-color)] bg-[var(--bg-primary)] pt-20 pb-20 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-28 transition-colors duration-200"
+			className="relative overflow-hidden border-b border-[var(--border-color)] bg-[var(--bg-primary)] pt-20 pb-20 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-28 transition-colors duration-300"
 		>
 			{/* Architectural background: disciplined coordinate grid */}
 			<div

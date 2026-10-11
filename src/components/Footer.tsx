@@ -8,8 +8,8 @@ import { navigationData } from '@/data/navigation';
 export function Footer() {
 	const [showBackToTop, setShowBackToTop] = useState(false);
 
-	const linkClass = "inline-flex min-h-9 items-center font-mono-code text-[11px] uppercase tracking-[0.08em] text-[var(--text-muted)] transition-colors hover:text-[#1d4ed8] dark:hover:text-[#60a5fa] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3b82f6]";
-	const floatingButtonClass = "fixed z-50 grid h-10 w-10 place-items-center rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-card)] text-[#1d4ed8] dark:text-[#60a5fa] transition-colors duration-150 motion-reduce:transition-none hover:border-[#3b82f6]/60 hover:text-[#1d4ed8] dark:hover:text-[#60a5fa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]";
+	const linkClass = "inline-flex min-h-9 items-center font-mono-code text-[11px] uppercase tracking-[0.08em] text-[var(--text-muted)] transition-colors duration-300 hover:text-[#1d4ed8] dark:hover:text-[#60a5fa] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3b82f6]";
+	const floatingButtonClass = "fixed z-50 grid h-10 w-10 place-items-center rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-card)] text-[#1d4ed8] dark:text-[#60a5fa] transition-colors duration-300 motion-reduce:transition-none hover:border-[#3b82f6]/60 hover:text-[#1d4ed8] dark:hover:text-[#60a5fa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]";
 
 	useEffect(() => {
 		let frame = 0;
@@ -40,7 +40,7 @@ export function Footer() {
 
 	return (
 		<>
-			<footer className="border-t border-[var(--border-color)] bg-[var(--bg-primary)] transition-colors duration-200">
+			<footer className="border-t border-[var(--border-color)] bg-[var(--bg-primary)] transition-colors duration-300">
 				<div className="mx-auto max-w-[1200px] px-5 py-7 sm:py-8 lg:px-8">
 					<div className="grid gap-6 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:items-center md:gap-8">
 						<div>

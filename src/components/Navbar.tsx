@@ -53,7 +53,7 @@ export function Navbar() {
 
 	const activeSection = sections.find((section) => section.href === activeHref);
 	return (
-		<header className="sticky top-0 z-40 w-full border-b border-[var(--border-color)] bg-[var(--bg-primary)]/95 backdrop-blur-xs transition-colors duration-200">
+		<header className="sticky top-0 z-40 w-full border-b border-[var(--border-color)] bg-[var(--bg-primary)]/95 backdrop-blur-xs transition-colors duration-300">
 			<div className="relative mx-auto hidden h-16 max-w-[1200px] grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center px-5 md:grid lg:px-8">
 				<a
 					href="#system"
@@ -69,7 +69,7 @@ export function Navbar() {
 						onClick={() => setSectionsOpen((open) => !open)}
 						aria-expanded={sectionsOpen}
 						aria-controls="portfolio-sections"
-						className="flex h-9 items-center gap-2 border border-[var(--border-color)] bg-[var(--bg-card)] px-3 font-mono-code text-xs uppercase tracking-[0.08em] text-[var(--text-secondary)] transition-colors duration-150 hover:border-[#3b82f6]/60 hover:text-[#2563eb] dark:hover:text-[#60a5fa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]"
+						className="flex h-9 items-center gap-2 border border-[var(--border-color)] bg-[var(--bg-card)] px-3 font-mono-code text-xs uppercase tracking-[0.08em] text-[var(--text-secondary)] transition-colors duration-300 hover:border-[#3b82f6]/60 hover:text-[#2563eb] dark:hover:text-[#60a5fa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]"
 					>
 						{activeSection ? (
 							<>
@@ -95,7 +95,7 @@ export function Navbar() {
 										setSectionsOpen(false);
 									}}
 									aria-current={selected ? 'location' : undefined}
-									className={`grid grid-cols-[2.5rem_1fr] items-center gap-2 border-l-2 px-2.5 py-2 font-mono-code text-xs transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#3b82f6] ${selected ? 'border-l-[#2563eb] dark:border-l-[#3b82f6] bg-[#3b82f6]/10 text-[#1d4ed8] dark:text-[#60a5fa] font-medium' : 'border-l-transparent text-[var(--text-secondary)] hover:bg-[var(--bg-card-hover)] hover:text-[#2563eb] dark:hover:text-[#60a5fa]'}`}
+									className={`grid grid-cols-[2.5rem_1fr] items-center gap-2 border-l-2 px-2.5 py-2 font-mono-code text-xs transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#3b82f6] ${selected ? 'border-l-[#2563eb] dark:border-l-[#3b82f6] bg-[#3b82f6]/10 text-[#1d4ed8] dark:text-[#60a5fa] font-medium' : 'border-l-transparent text-[var(--text-secondary)] hover:bg-[var(--bg-card-hover)] hover:text-[#2563eb] dark:hover:text-[#60a5fa]'}`}
 								>
 									<span className={`tabular-nums text-[0.625rem] ${selected ? 'text-[#2563eb] dark:text-[#60a5fa]' : 'text-[var(--text-muted)]'}`}>{section.number}</span>
 									<span>{section.label}</span>
@@ -109,7 +109,7 @@ export function Navbar() {
 					<button
 						type="button"
 						onClick={toggleTheme}
-						className="grid h-9 w-9 place-items-center border border-[var(--border-color)] bg-[var(--bg-card)] text-[var(--text-secondary)] transition-colors duration-150 hover:bg-[var(--bg-card-hover)] hover:text-[#2563eb] dark:hover:text-[#60a5fa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]"
+						className="grid h-9 w-9 place-items-center border border-[var(--border-color)] bg-[var(--bg-card)] text-[var(--text-secondary)] transition-colors duration-300 hover:bg-[var(--bg-card-hover)] hover:text-[#2563eb] dark:hover:text-[#60a5fa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]"
 						aria-label={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
 						title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
 					>
@@ -118,7 +118,7 @@ export function Navbar() {
 					<a
 						href={cvPath}
 						download
-						className="inline-flex h-9 items-center justify-center gap-2 border border-[#2563eb] bg-[#2563eb] hover:bg-[#1d4ed8] dark:border-[#2563eb] dark:bg-[#2563eb] dark:hover:border-[#1d4ed8] dark:hover:bg-[#1d4ed8] px-3 font-mono-code text-xs font-semibold uppercase tracking-[0.06em] text-white transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]"
+						className="inline-flex h-9 items-center justify-center gap-2 border border-[#2563eb] bg-[#2563eb] hover:bg-[#1d4ed8] dark:border-[#2563eb] dark:bg-[#2563eb] dark:hover:border-[#1d4ed8] dark:hover:bg-[#1d4ed8] px-3 font-mono-code text-xs font-semibold uppercase tracking-[0.06em] text-white transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]"
 					>
 						<ArrowDownToLine aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
 						<span>Download CV</span>
@@ -141,14 +141,14 @@ export function Navbar() {
 						aria-expanded={mobileMenuOpen}
 						aria-controls="mobile-portfolio-menu"
 						aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-						className="grid h-9 w-9 place-items-center rounded-xs border border-[var(--border-color)] bg-[var(--bg-card)] text-[var(--text-secondary)] transition-colors duration-150 hover:bg-[var(--bg-card-hover)] hover:text-[#2563eb] dark:hover:text-[#60a5fa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]"
+						className="grid h-9 w-9 place-items-center rounded-xs border border-[var(--border-color)] bg-[var(--bg-card)] text-[var(--text-secondary)] transition-colors duration-300 hover:bg-[var(--bg-card-hover)] hover:text-[#2563eb] dark:hover:text-[#60a5fa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]"
 					>
 						{mobileMenuOpen ? <X aria-hidden="true" className="h-4 w-4" /> : <Menu aria-hidden="true" className="h-4 w-4" />}
 					</button>
 					<button
 						type="button"
 						onClick={toggleTheme}
-						className="grid h-9 w-9 place-items-center rounded-xs border border-[var(--border-color)] bg-[var(--bg-card)] text-[var(--text-secondary)] transition-colors duration-150 hover:bg-[var(--bg-card-hover)] hover:text-[#2563eb] dark:hover:text-[#60a5fa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]"
+						className="grid h-9 w-9 place-items-center rounded-xs border border-[var(--border-color)] bg-[var(--bg-card)] text-[var(--text-secondary)] transition-colors duration-300 hover:bg-[var(--bg-card-hover)] hover:text-[#2563eb] dark:hover:text-[#60a5fa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]"
 						aria-label={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
 						title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
 					>
@@ -170,7 +170,7 @@ export function Navbar() {
 										setMobileMenuOpen(false);
 									}}
 									aria-current={selected ? 'location' : undefined}
-									className={`grid min-h-11 grid-cols-[2.5rem_1fr] items-center gap-3 rounded-xs border-l-2 px-3 font-mono-code text-sm transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#3b82f6] ${selected ? 'border-l-[#2563eb] dark:border-l-[#3b82f6] bg-[#3b82f6]/10 text-[#1d4ed8] dark:text-[#60a5fa] font-medium' : 'border-l-transparent text-[var(--text-secondary)] hover:bg-[var(--bg-card-hover)] hover:text-[#2563eb] dark:hover:text-[#60a5fa]'}`}
+									className={`grid min-h-11 grid-cols-[2.5rem_1fr] items-center gap-3 rounded-xs border-l-2 px-3 font-mono-code text-sm transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#3b82f6] ${selected ? 'border-l-[#2563eb] dark:border-l-[#3b82f6] bg-[#3b82f6]/10 text-[#1d4ed8] dark:text-[#60a5fa] font-medium' : 'border-l-transparent text-[var(--text-secondary)] hover:bg-[var(--bg-card-hover)] hover:text-[#2563eb] dark:hover:text-[#60a5fa]'}`}
 								>
 									<span className={`tabular-nums text-[0.6875rem] ${selected ? 'text-[#2563eb] dark:text-[#60a5fa]' : 'text-[var(--text-muted)]'}`}>{section.number}</span>
 									<span>{section.label}</span>
@@ -182,7 +182,7 @@ export function Navbar() {
 								href={cvPath}
 								download
 								onClick={() => setMobileMenuOpen(false)}
-								className="flex h-10 items-center justify-center gap-2 border border-[#2563eb] bg-[#2563eb] hover:bg-[#1d4ed8] dark:border-[#2563eb] dark:bg-[#2563eb] dark:hover:border-[#1d4ed8] dark:hover:bg-[#1d4ed8] px-3 font-mono-code text-xs font-semibold uppercase tracking-[0.06em] text-white transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]"
+								className="flex h-10 items-center justify-center gap-2 border border-[#2563eb] bg-[#2563eb] hover:bg-[#1d4ed8] dark:border-[#2563eb] dark:bg-[#2563eb] dark:hover:border-[#1d4ed8] dark:hover:bg-[#1d4ed8] px-3 font-mono-code text-xs font-semibold uppercase tracking-[0.06em] text-white transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]"
 							>
 								<ArrowDownToLine aria-hidden="true" className="h-3.5 w-3.5" />
 								Download CV

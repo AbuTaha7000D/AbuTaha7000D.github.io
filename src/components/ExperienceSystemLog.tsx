@@ -76,7 +76,7 @@ export function ExperienceSystemLog() {
 	return (
 		<section
 			id="experience"
-			className="relative overflow-hidden border-b border-[var(--border-color)] bg-[var(--bg-primary)] pt-20 pb-20 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-28 transition-colors duration-200"
+			className="relative overflow-hidden border-b border-[var(--border-color)] bg-[var(--bg-primary)] pt-20 pb-20 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-28 transition-colors duration-300"
 		>
 			{/* Architectural background: disciplined coordinate grid */}
 			<div
@@ -207,7 +207,7 @@ export function ExperienceSystemLog() {
 													return (
 														<li
 															key={j}
-															className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-soft)] p-3.5 transition-colors duration-150 hover:border-[#3b82f6]/40"
+															className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-soft)] p-3.5 transition-colors duration-300 hover:border-[#3b82f6]/40"
 														>
 															<div className="flex items-start gap-3">
 																<div className="mt-0.5 shrink-0 p-1.5 rounded-[3px] bg-[var(--bg-primary)] border border-[var(--border-color)]">

@@ -6,7 +6,7 @@ export function EducationSection() {
 	return (
 		<section
 			id="education"
-			className="relative overflow-hidden border-b border-[var(--border-color)] bg-[var(--bg-primary)] py-20 transition-colors duration-200 sm:py-24 lg:py-28"
+			className="relative overflow-hidden border-b border-[var(--border-color)] bg-[var(--bg-primary)] py-20 transition-colors duration-300 sm:py-24 lg:py-28"
 		>
 			<div
 				className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.04]"
@@ -132,7 +132,7 @@ export function EducationSection() {
 							{certificationData.map((certification, index) => (
 								<li
 									key={certification.id}
-									className="grid min-w-0 grid-cols-[2rem_minmax(0,1fr)] gap-3 p-4 transition-colors duration-150 hover:bg-black/[0.025] sm:grid-cols-[2.5rem_minmax(0,1fr)_auto] sm:items-center sm:gap-4 sm:px-5 sm:py-5 dark:hover:bg-white/[0.025]"
+									className="grid min-w-0 grid-cols-[2rem_minmax(0,1fr)] gap-3 p-4 transition-colors duration-300 hover:bg-black/[0.025] sm:grid-cols-[2.5rem_minmax(0,1fr)_auto] sm:items-center sm:gap-4 sm:px-5 sm:py-5 dark:hover:bg-white/[0.025]"
 								>
 									<span className="pt-0.5 font-mono-code text-xs font-semibold tabular-nums text-[#2563eb] dark:text-[#60a5fa]">
 										{String(index + 1).padStart(2, '0')}
@@ -155,7 +155,7 @@ export function EducationSection() {
 											target="_blank"
 											rel="noopener noreferrer"
 											aria-label={`View credential for ${certification.name} (opens in a new tab)`}
-											className="col-start-2 mt-1 inline-flex min-h-8 items-center gap-1 font-mono-code text-xs uppercase tracking-[0.08em] text-[#2563eb] dark:text-[#60a5fa] transition-colors hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6] sm:col-start-auto sm:mt-0"
+											className="col-start-2 mt-1 inline-flex min-h-8 items-center gap-1 font-mono-code text-xs uppercase tracking-[0.08em] text-[#2563eb] dark:text-[#60a5fa] transition-colors duration-300 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6] sm:col-start-auto sm:mt-0"
 										>
 											View credential <span aria-hidden="true">→</span>
 										</a>

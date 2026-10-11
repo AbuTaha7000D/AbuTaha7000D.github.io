@@ -204,6 +204,19 @@
 		transition: background-color 0.3s ease, color 0.3s ease;
 	}
 
+	/*
+		Uniform theme-transition timing for every element that has no explicit
+		transition of its own (headings, paragraphs, cards, panels). The theme
+		tokens are plain custom properties, so each element must transition its
+		painted colors individually; this keeps backgrounds, text, and borders
+		switching in lockstep. Elements with Tailwind transition utilities keep
+		their own durations/properties (hover effects, reveal, transforms, menus).
+	*/
+	body,
+	body * {
+		transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+	}
+
 	::selection {
 		background: var(--accent);
 		color: var(--bg-primary);

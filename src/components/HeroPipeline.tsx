@@ -22,7 +22,7 @@ export function HeroPipeline() {
 	return (
 		<section
 			id="system"
-			className="relative overflow-hidden border-b border-[var(--border-color)] bg-[var(--bg-primary)] pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-28 transition-colors duration-200"
+			className="relative overflow-hidden border-b border-[var(--border-color)] bg-[var(--bg-primary)] pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-28 transition-colors duration-300"
 		>
 			{/* Architectural background: disciplined coordinate grid + controlled ambient glow */}
 			<div
@@ -94,7 +94,7 @@ export function HeroPipeline() {
 
 						{/* Technical Capability Grid (Data Engineer / Analyst evidence) */}
 						<div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[560px]">
-							<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-card)] p-3.5 transition-colors duration-150 hover:border-[#3b82f6]/50">
+							<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-card)] p-3.5 transition-colors duration-300 hover:border-[#3b82f6]/50">
 								<div className="flex items-center gap-2 font-mono-code text-[11px] uppercase tracking-[0.14em] text-[#2563eb] dark:text-[#60a5fa]">
 									<Workflow className="h-3.5 w-3.5 text-[#2563eb] dark:text-[#3b82f6]" />
 									<span>ETL &amp; Pipelines</span>
@@ -104,7 +104,7 @@ export function HeroPipeline() {
 								</p>
 							</div>
 
-							<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-card)] p-3.5 transition-colors duration-150 hover:border-[#3b82f6]/50">
+							<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-card)] p-3.5 transition-colors duration-300 hover:border-[#3b82f6]/50">
 								<div className="flex items-center gap-2 font-mono-code text-[11px] uppercase tracking-[0.14em] text-[#2563eb] dark:text-[#60a5fa]">
 									<Database className="h-3.5 w-3.5 text-[#2563eb] dark:text-[#3b82f6]" />
 									<span>SQL &amp; Relational DBs</span>
@@ -114,7 +114,7 @@ export function HeroPipeline() {
 								</p>
 							</div>
 
-							<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-card)] p-3.5 transition-colors duration-150 hover:border-[#3b82f6]/50">
+							<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-card)] p-3.5 transition-colors duration-300 hover:border-[#3b82f6]/50">
 								<div className="flex items-center gap-2 font-mono-code text-[11px] uppercase tracking-[0.14em] text-[#2563eb] dark:text-[#60a5fa]">
 									<BarChart3 className="h-3.5 w-3.5 text-[#2563eb] dark:text-[#3b82f6]" />
 									<span>Analytics &amp; EDA</span>
@@ -124,7 +124,7 @@ export function HeroPipeline() {
 								</p>
 							</div>
 
-							<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-card)] p-3.5 transition-colors duration-150 hover:border-[#3b82f6]/50">
+							<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-card)] p-3.5 transition-colors duration-300 hover:border-[#3b82f6]/50">
 								<div className="flex items-center gap-2 font-mono-code text-[11px] uppercase tracking-[0.14em] text-[#2563eb] dark:text-[#60a5fa]">
 									<Cpu className="h-3.5 w-3.5 text-[#2563eb] dark:text-[#3b82f6]" />
 									<span>Python &amp; Automation</span>
@@ -139,7 +139,7 @@ export function HeroPipeline() {
 						<div className="mt-8 flex flex-wrap items-center gap-3">
 							<a
 								href="#projects"
-								className="group inline-flex w-full items-center justify-center gap-2 rounded-[4px] bg-[#2563eb] hover:bg-[#1d4ed8] dark:bg-[#2563eb] dark:hover:bg-[#1d4ed8] px-5 py-2.5 font-mono-code text-xs uppercase tracking-[0.1em] font-semibold text-white transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6] sm:w-auto"
+								className="group inline-flex w-full items-center justify-center gap-2 rounded-[4px] bg-[#2563eb] hover:bg-[#1d4ed8] dark:bg-[#2563eb] dark:hover:bg-[#1d4ed8] px-5 py-2.5 font-mono-code text-xs uppercase tracking-[0.1em] font-semibold text-white transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6] sm:w-auto"
 							>
 								<span>Explore Projects</span>
 								<ArrowRight className="h-3.5 w-3.5 transition-transform duration-150 group-hover:translate-x-0.5" />
@@ -148,7 +148,7 @@ export function HeroPipeline() {
 							<a
 								href="/cv/Mahmoud_Ehab_CV_2026.pdf"
 								download
-								className="inline-flex w-full items-center justify-center gap-2 rounded-[4px] border border-[var(--border-subtle)] bg-[var(--bg-card)] px-5 py-2.5 font-mono-code text-xs uppercase tracking-[0.1em] font-medium text-[var(--text-secondary)] transition-colors duration-150 hover:border-[#2563eb] hover:bg-[#2563eb] hover:text-white dark:hover:border-[#3b82f6]/60 dark:hover:bg-[var(--bg-card-hover)] dark:hover:text-white focus-visible:outline-2 focus-visible:outline-[#3b82f6] sm:w-auto"
+								className="inline-flex w-full items-center justify-center gap-2 rounded-[4px] border border-[var(--border-subtle)] bg-[var(--bg-card)] px-5 py-2.5 font-mono-code text-xs uppercase tracking-[0.1em] font-medium text-[var(--text-secondary)] transition-colors duration-300 hover:border-[#2563eb] hover:bg-[#2563eb] hover:text-white dark:hover:border-[#3b82f6]/60 dark:hover:bg-[var(--bg-card-hover)] dark:hover:text-white focus-visible:outline-2 focus-visible:outline-[#3b82f6] sm:w-auto"
 							>
 								<Download className="h-3.5 w-3.5 text-[var(--text-muted)]" />
 								<span>Download CV</span>
@@ -161,7 +161,7 @@ export function HeroPipeline() {
 								href={profileData.github}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="inline-flex items-center gap-1.5 transition-colors hover:text-[#2563eb] dark:hover:text-[#60a5fa]"
+								className="inline-flex items-center gap-1.5 transition-colors duration-300 hover:text-[#2563eb] dark:hover:text-[#60a5fa]"
 							>
 								<GitBranch className="h-3.5 w-3.5" />
 								<span>GitHub</span>
@@ -170,7 +170,7 @@ export function HeroPipeline() {
 								href={profileData.linkedin}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="inline-flex items-center gap-1.5 transition-colors hover:text-[#2563eb] dark:hover:text-[#60a5fa]"
+								className="inline-flex items-center gap-1.5 transition-colors duration-300 hover:text-[#2563eb] dark:hover:text-[#60a5fa]"
 							>
 								<LinkedinIcon className="h-3.5 w-3.5" />
 								<span>LinkedIn</span>
@@ -179,14 +179,14 @@ export function HeroPipeline() {
 								href={profileData.kaggle}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="inline-flex items-center gap-1.5 transition-colors hover:text-[#2563eb] dark:hover:text-[#60a5fa]"
+								className="inline-flex items-center gap-1.5 transition-colors duration-300 hover:text-[#2563eb] dark:hover:text-[#60a5fa]"
 							>
 								<BarChart3 className="h-3.5 w-3.5" />
 								<span>Kaggle</span>
 							</a>
 							<a
 								href={`mailto:${profileData.email}`}
-								className="inline-flex items-center gap-1.5 transition-colors hover:text-[#2563eb] dark:hover:text-[#60a5fa]"
+								className="inline-flex items-center gap-1.5 transition-colors duration-300 hover:text-[#2563eb] dark:hover:text-[#60a5fa]"
 							>
 								<Mail className="h-3.5 w-3.5" />
 								<span>Email</span>
@@ -223,7 +223,7 @@ export function HeroPipeline() {
 								</div>
 
 								{/* Stage 01: Extract */}
-								<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-soft)] p-3 transition-colors hover:border-[#3b82f6]/40">
+								<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-soft)] p-3 transition-colors duration-300 hover:border-[#3b82f6]/40">
 									<div className="flex items-center justify-between gap-2">
 										<div className="flex items-center gap-2">
 											<span className="font-mono-code text-[10px] font-semibold text-[#2563eb] dark:text-[#3b82f6]">01</span>
@@ -255,7 +255,7 @@ export function HeroPipeline() {
 								</div>
 
 								{/* Stage 02: Transform */}
-								<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-soft)] p-3 transition-colors hover:border-[#3b82f6]/40">
+								<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-soft)] p-3 transition-colors duration-300 hover:border-[#3b82f6]/40">
 									<div className="flex items-center justify-between gap-2">
 										<div className="flex items-center gap-2">
 											<span className="font-mono-code text-[10px] font-semibold text-[#2563eb] dark:text-[#3b82f6]">02</span>
@@ -287,7 +287,7 @@ export function HeroPipeline() {
 								</div>
 
 								{/* Stage 03: Load / Storage */}
-								<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-soft)] p-3 transition-colors hover:border-[#3b82f6]/40">
+								<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-soft)] p-3 transition-colors duration-300 hover:border-[#3b82f6]/40">
 									<div className="flex items-center justify-between gap-2">
 										<div className="flex items-center gap-2">
 											<span className="font-mono-code text-[10px] font-semibold text-[#2563eb] dark:text-[#3b82f6]">03</span>
@@ -319,7 +319,7 @@ export function HeroPipeline() {
 								</div>
 
 								{/* Stage 04: Analyze & Serve */}
-								<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-soft)] p-3 transition-colors hover:border-[#3b82f6]/40">
+								<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-soft)] p-3 transition-colors duration-300 hover:border-[#3b82f6]/40">
 									<div className="flex items-center justify-between gap-2">
 										<div className="flex items-center gap-2">
 											<span className="font-mono-code text-[10px] font-semibold text-[#2563eb] dark:text-[#3b82f6]">04</span>
