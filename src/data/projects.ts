@@ -2,42 +2,6 @@ import { Project } from '@/types';
 
 export const projectsData: Project[] = [
   {
-    id: 'snack-n-track',
-    title: 'Snack n\u2019 Track',
-    subtitle: 'Graduation Project | Computer & Control Engineering',
-    description:
-      'An AI-powered nutrition tracking application combining mobile client interfaces, a backend API, relational data storage, and machine learning models.',
-    problem:
-      'Logging nutritional intake and daily meals manually is repetitive and prone to inconsistent nutrient tracking without automated estimation.',
-    whatIBuilt:
-      'An end-to-end nutrition tracking system combining an Ionic/Vue 3 mobile frontend, a TypeScript/Node.js backend, a containerized PostgreSQL database with Prisma ORM migrations, and machine learning models for food classification.',
-    technologies: [
-      'TypeScript',
-      'Node.js',
-      'PostgreSQL',
-      'Prisma ORM',
-      'Vue 3',
-      'Ionic',
-      'Python',
-      'Docker',
-    ],
-    relevantConcepts: [
-      'Relational Database Schema Design',
-      'Database Migrations & Seeding',
-      'REST API Architecture',
-      'Machine Learning Integration',
-      'Full-Stack Software Architecture',
-      'Containerized Development (Docker)',
-    ],
-    highlights: [
-      'Designed and executed relational database schemas and migrations in PostgreSQL using Prisma ORM.',
-      'Constructed backend API endpoints to serve client requests and interface with food classification logic.',
-      'Developed mobile UI components with Ionic and Vue 3, integrating device camera and client-side validation.',
-      'Completed as the final graduation project for the Bachelor of Electrical Engineering (Computer & Control Engineering).',
-    ],
-    github: 'https://github.com/ramyyasser21102/snack_n_track',
-  },
-  {
     id: 'downv',
     title: 'DownV',
     subtitle: 'Personal Project | Python CLI Tool',
