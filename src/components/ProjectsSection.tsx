@@ -53,7 +53,7 @@ export function ProjectsSection() {
 		>
 			{/* Architectural background: disciplined coordinate grid */}
 			<div
-				className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.04]"
+				className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.04] transition-opacity duration-300"
 				style={{
 					backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
 					backgroundSize: '28px 28px',
@@ -180,7 +180,7 @@ export function ProjectsSection() {
 												>
 													<GitBranch className="h-3.5 w-3.5 text-[#3b82f6]" />
 													<span>VIEW SOURCE REPOSITORY</span>
-													<ArrowUpRight className="h-3.5 w-3.5 text-[var(--text-muted)] transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+													<ArrowUpRight className="h-3.5 w-3.5 text-[var(--text-muted)] transition-[transform,translate,scale,rotate,color] duration-[150ms,150ms,150ms,150ms,300ms] group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
 												</a>
 											</div>
 										)}

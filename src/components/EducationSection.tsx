@@ -9,7 +9,7 @@ export function EducationSection() {
 			className="relative overflow-hidden border-b border-[var(--border-color)] bg-[var(--bg-primary)] py-20 transition-colors duration-300 sm:py-24 lg:py-28"
 		>
 			<div
-				className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.04]"
+				className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.04] transition-opacity duration-300"
 				style={{
 					backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)',
 					backgroundSize: '28px 28px',

@@ -19,7 +19,7 @@ export function AboutSqlQuery() {
 		>
 			{/* Architectural background: disciplined coordinate grid */}
 			<div
-				className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.04]"
+				className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.04] transition-opacity duration-300"
 				style={{
 					backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
 					backgroundSize: '28px 28px',
@@ -82,7 +82,7 @@ export function AboutSqlQuery() {
 									className="object-cover object-[center_16%] transition-transform duration-300 hover:scale-[1.015]"
 								/>
 								<div
-									className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 dark:opacity-80"
+									className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 dark:opacity-80 transition-opacity duration-300"
 									aria-hidden="true"
 								/>
 								<div className="absolute bottom-2.5 left-3 font-mono-code text-[10px] uppercase tracking-[0.16em] px-2 py-0.5 rounded-[2px] backdrop-blur-xs border border-white/20 bg-black/70 text-white font-medium">

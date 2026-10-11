@@ -55,7 +55,7 @@ export function StackArchitectureMap() {
 		>
 			{/* Architectural background: disciplined coordinate grid */}
 			<div
-				className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.04]"
+				className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.04] transition-opacity duration-300"
 				style={{
 					backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
 					backgroundSize: '28px 28px',

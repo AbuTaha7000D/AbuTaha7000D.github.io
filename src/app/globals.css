@@ -188,7 +188,8 @@
 
 		*,
 		*::before,
-		*::after {
+		*::after,
+		*::placeholder {
 			animation-duration: 0.01ms !important;
 			animation-iteration-count: 1 !important;
 			transition-duration: 0.01ms !important;
@@ -201,7 +202,7 @@
 		color: var(--text-primary);
 		font-family: var(--font-geist-sans, system-ui, sans-serif);
 		-webkit-font-smoothing: antialiased;
-		transition: background-color 0.3s ease, color 0.3s ease;
+		transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
 	/*
@@ -211,10 +212,25 @@
 		painted colors individually; this keeps backgrounds, text, and borders
 		switching in lockstep. Elements with Tailwind transition utilities keep
 		their own durations/properties (hover effects, reveal, transforms, menus).
+		The timing function matches Tailwind's default so utility-driven theme
+		transitions and these fallback ones share one easing curve.
 	*/
 	body,
 	body * {
-		transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+		transition:
+			background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+			color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+			border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	/*
+		Placeholder text lives in ::placeholder, a pseudo-element that does not
+		inherit the field's transition — theme changes to it must be declared here
+		or the placeholder snaps while the rest of the field fades.
+	*/
+	input::placeholder,
+	textarea::placeholder {
+		transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
 	::selection {

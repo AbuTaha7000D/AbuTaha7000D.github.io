@@ -26,7 +26,7 @@ export function HeroPipeline() {
 		>
 			{/* Architectural background: disciplined coordinate grid + controlled ambient glow */}
 			<div
-				className="pointer-events-none absolute inset-0 opacity-[0.035] dark:opacity-[0.05]"
+				className="pointer-events-none absolute inset-0 opacity-[0.035] dark:opacity-[0.05] transition-opacity duration-300"
 				style={{
 					backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
 					backgroundSize: '28px 28px',

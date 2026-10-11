@@ -82,7 +82,7 @@ export function Navbar() {
 					<nav
 						id="portfolio-sections"
 						aria-label="Portfolio sections"
-						className={`absolute left-1/2 top-full z-50 mt-2 w-[min(260px,calc(100vw-40px))] -translate-x-1/2 origin-top border border-[var(--border-color)] bg-[var(--bg-secondary)] shadow-lg p-1.5 transition-[opacity,transform,visibility] duration-150 ${sectionsOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0'}`}
+						className={`absolute left-1/2 top-full z-50 mt-2 w-[min(260px,calc(100vw-40px))] -translate-x-1/2 origin-top border border-[var(--border-color)] bg-[var(--bg-secondary)] shadow-lg p-1.5 transition-[opacity,transform,visibility,background-color,border-color] duration-[150ms,150ms,150ms,300ms,300ms] ${sectionsOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0'}`}
 					>
 						{sections.map((section) => {
 							const selected = activeHref === section.href;
@@ -157,7 +157,7 @@ export function Navbar() {
 					<nav
 						id="mobile-portfolio-menu"
 						aria-label="Mobile navigation"
-						className={`absolute right-0 top-[calc(100%+0.5rem)] z-50 max-h-[calc(100dvh-5.5rem)] w-[min(20rem,calc(100vw-2.5rem))] origin-top-right overflow-y-auto overscroll-contain rounded-xs border border-[var(--border-color)] bg-[var(--bg-secondary)] shadow-xl p-2 transition-[opacity,transform,visibility] duration-150 ${mobileMenuOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0'}`}
+						className={`absolute right-0 top-[calc(100%+0.5rem)] z-50 max-h-[calc(100dvh-5.5rem)] w-[min(20rem,calc(100vw-2.5rem))] origin-top-right overflow-y-auto overscroll-contain rounded-xs border border-[var(--border-color)] bg-[var(--bg-secondary)] shadow-xl p-2 transition-[opacity,transform,visibility,background-color,border-color] duration-[150ms,150ms,150ms,300ms,300ms] ${mobileMenuOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0'}`}
 					>
 						{sections.map((section) => {
 							const selected = activeHref === section.href;

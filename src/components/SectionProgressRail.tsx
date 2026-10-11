@@ -65,7 +65,7 @@ export function SectionProgressRail() {
 									<div className="relative flex items-center w-9 h-full">
 										<span
 											aria-hidden="true"
-											className={`shrink-0 h-[2px] rounded-[1px] transition-all duration-150 ease-out motion-reduce:transition-none ${
+											className={`shrink-0 h-[2px] rounded-[1px] transition-[width,background-color] duration-[150ms,300ms] [transition-timing-function:ease-out,cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none ${
 												isActive
 													? 'w-9 bg-[#2563eb] dark:bg-[#3b82f6]'
 													: 'w-5 bg-[var(--border-subtle)] group-hover:w-9 group-hover:bg-[#2563eb] dark:group-hover:bg-[#60a5fa] group-focus-visible:w-9 group-focus-visible:bg-[#2563eb] dark:group-focus-visible:bg-[#60a5fa]'
@@ -76,7 +76,7 @@ export function SectionProgressRail() {
 									{/* Section Label (anchored to the right of the 36px column) */}
 									<span
 										aria-hidden="true"
-										className={`absolute left-full ml-2.5 top-1/2 -translate-y-1/2 font-mono-code text-[11px] uppercase tracking-[0.08em] transition-all duration-150 ease-out motion-reduce:transition-none whitespace-nowrap pointer-events-none ${
+										className={`absolute left-full ml-2.5 top-1/2 -translate-y-1/2 font-mono-code text-[11px] uppercase tracking-[0.08em] transition-[opacity,translate,color] duration-[150ms,150ms,300ms] [transition-timing-function:ease-out,ease-out,cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none whitespace-nowrap pointer-events-none ${
 											isActive
 												? 'opacity-100 translate-x-0 text-[#2563eb] dark:text-[#60a5fa] font-semibold'
 												: 'opacity-0 -translate-x-1.5 group-hover:opacity-100 group-hover:translate-x-0 group-focus-visible:opacity-100 group-focus-visible:translate-x-0 text-[var(--text-secondary)] group-hover:text-[#2563eb] dark:group-hover:text-[#60a5fa]'
@@ -93,7 +93,7 @@ export function SectionProgressRail() {
 
 			{/* Back to Top control (fixed near bottom of viewport, sharing same horizontal axis) */}
 			<div
-				className={`fixed bottom-6 xl:bottom-8 z-30 hidden xl:block transition-all duration-200 motion-reduce:transition-none w-9 ${
+				className={`fixed bottom-6 xl:bottom-8 z-30 hidden xl:block transition-[opacity,translate,color] duration-[200ms,200ms,300ms] motion-reduce:transition-none w-9 ${
 					showBackToTop
 						? 'opacity-100 translate-y-0 pointer-events-auto'
 						: 'opacity-0 translate-y-1 pointer-events-none'
@@ -110,7 +110,7 @@ export function SectionProgressRail() {
 					<span className="grid h-9 w-9 place-items-center rounded-xs border border-[var(--border-color)] bg-[var(--bg-card)] text-[#2563eb] dark:text-[#60a5fa] transition-colors duration-300 hover:border-[#3b82f6]/60 hover:bg-[var(--bg-card-hover)]">
 						<ArrowUp aria-hidden="true" className="h-4 w-4" />
 					</span>
-					<span className="absolute left-full ml-2.5 top-1/2 -translate-y-1/2 font-mono-code text-[11px] uppercase tracking-[0.08em] opacity-0 -translate-x-1.5 transition-all duration-150 group-hover/top:opacity-100 group-hover/top:translate-x-0 group-focus-visible/top:opacity-100 group-focus-visible/top:translate-x-0 whitespace-nowrap text-[var(--text-secondary)] pointer-events-none">
+					<span className="absolute left-full ml-2.5 top-1/2 -translate-y-1/2 font-mono-code text-[11px] uppercase tracking-[0.08em] opacity-0 -translate-x-1.5 transition-[opacity,translate,color] duration-[150ms,150ms,300ms] group-hover/top:opacity-100 group-hover/top:translate-x-0 group-focus-visible/top:opacity-100 group-focus-visible/top:translate-x-0 whitespace-nowrap text-[var(--text-secondary)] pointer-events-none">
 						TOP
 					</span>
 				</button>
