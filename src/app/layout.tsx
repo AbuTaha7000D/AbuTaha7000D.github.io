@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { Geist, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
@@ -92,22 +91,9 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="en">
 			<head>
 				<meta name="theme-color" content="#0b0e14" />
-				<Script id="theme-init" strategy="beforeInteractive">
-					{`
-						(function() {
-							try {
-								var storedTheme = localStorage.getItem('theme');
-								var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-								if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
-									document.documentElement.classList.add('dark');
-								}
-							} catch (error) {}
-						})();
-					`}
-				</Script>
 			</head>
 			<body
 				className={`${geist.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} antialiased min-h-screen`}

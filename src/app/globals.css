@@ -6,7 +6,8 @@
 @theme {
 	/* Font families */
 	--font-sans: var(--font-geist-sans), system-ui, sans-serif;
-	--font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+	--font-display: var(--font-space-grotesk), system-ui, sans-serif;
+	--font-mono: var(--font-mono), 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
 	/* Blue accent ramp for data infrastructure interface */
 	--color-accent-50: #eff6ff;
@@ -129,7 +130,7 @@
 		--border: #e2e8f0;
 		--border-soft: #f1f5f9;
 		--text: #0f172a;
-		--text-faint: #94a3b8;
+		--text-faint: #475569;
 		--accent: #2563eb;
 		--accent-soft: rgba(37, 99, 235, 0.08);
 		--accent-line: rgba(37, 99, 235, 0.3);
@@ -180,6 +181,21 @@
 		scroll-behavior: smooth;
 	}
 
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
+
 	body {
 		background-color: var(--bg-primary);
 		color: var(--text-primary);
@@ -215,6 +231,11 @@ section[id] {
 	background-image:
 		linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
 		linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+}
+
+/* Display font utility */
+.font-display {
+	font-family: var(--font-display, var(--font-space-grotesk), system-ui, sans-serif);
 }
 
 /* Monospace font utility */

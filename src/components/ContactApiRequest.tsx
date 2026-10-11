@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { profileData } from '@/data/profile';
 import { LinkedinIcon } from '@/components/icons/LinkedinIcon';
-import { useTheme } from '@/components/ThemeProvider';
 import {
 	ArrowUpRight,
 	BarChart3,
@@ -16,8 +15,6 @@ import {
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 export function ContactApiRequest() {
-	const { theme } = useTheme();
-	const dark = theme === 'dark';
 	const [formData, setFormData] = useState({
 		name: '',
 		email: '',
@@ -26,21 +23,6 @@ export function ContactApiRequest() {
 	});
 	const [status, setStatus] = useState<FormStatus>('idle');
 	const [errorMessage, setErrorMessage] = useState('');
-
-	const sectionBg = dark ? 'bg-[#0b0e14]' : 'bg-[var(--bg-primary)]';
-	const border = dark ? 'border-[#212836]' : 'border-[var(--border-color)]';
-	const divider = dark ? 'border-[#212836]/70' : 'border-[var(--border-color)]';
-	const surface = dark ? 'bg-[#10141d]' : 'bg-[var(--bg-card)]';
-	const surfaceRaised = dark ? 'bg-[#131824]' : 'bg-[var(--bg-soft)]';
-	const inputSurface = dark ? 'bg-[#0e121a]' : 'bg-[var(--bg-primary)]';
-	const inputBorder = dark ? 'border-[#212836]' : 'border-[var(--border-color)]';
-	const heading = dark ? 'text-white' : 'text-[var(--text-primary)]';
-	const primary = dark ? 'text-[#e6e9ef]' : 'text-[var(--text-primary)]';
-	const secondary = dark ? 'text-[#c7cdd9]' : 'text-[var(--text-secondary)]';
-	const muted = dark ? 'text-[#8a93a6]' : 'text-[var(--text-muted)]';
-	const accent = dark ? 'text-[#60a5fa]' : 'text-[#1d4ed8]';
-	const iconAccent = dark ? 'text-[#60a5fa]' : 'text-[#2563eb]';
-	const focusRing = 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b82f6] focus-visible:ring-offset-2';
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -85,95 +67,91 @@ export function ContactApiRequest() {
 		}
 	};
 
-	const inputClass = `w-full min-h-11 rounded-[4px] border ${inputBorder} ${inputSurface} px-3.5 py-2.5 text-sm ${primary} ${dark ? 'placeholder:text-[#8a93a6]' : 'placeholder:text-[var(--text-muted)]'} ${focusRing} focus-visible:ring-offset-2 ${dark ? 'focus-visible:ring-offset-[#10141d]' : 'focus-visible:ring-offset-white'} transition-colors`;
-	const labelClass = `mb-1.5 block text-xs font-medium ${secondary}`;
-	const socialLinkClass = `inline-flex min-h-11 items-center gap-2 border-b ${divider} py-2 font-mono-code text-xs uppercase tracking-[0.08em] ${secondary} transition-colors ${dark ? 'hover:text-[#60a5fa]' : 'hover:text-[#1d4ed8]'} hover:border-[#3b82f6]/50 ${focusRing} focus-visible:ring-offset-2 ${dark ? 'focus-visible:ring-offset-[#0b0e14]' : 'focus-visible:ring-offset-[var(--bg-primary)]'}`;
+	const inputClass = "w-full min-h-11 rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-primary)] px-3.5 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b82f6] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-card)] transition-colors";
+	const labelClass = "mb-1.5 block text-xs font-medium text-[var(--text-secondary)]";
+	const socialLinkClass = "inline-flex min-h-11 items-center gap-2 border-b border-[var(--border-color)]/70 py-2 font-mono-code text-xs uppercase tracking-[0.08em] text-[var(--text-secondary)] transition-colors hover:text-[#1d4ed8] dark:hover:text-[#60a5fa] hover:border-[#3b82f6]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b82f6] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)]";
 
 	return (
 		<section
 			id="contact"
-			className={`relative border-b ${border} ${sectionBg} py-20 transition-colors duration-200 sm:py-24 lg:py-28`}
+			className="relative border-b border-[var(--border-color)] bg-[var(--bg-primary)] py-20 transition-colors duration-200 sm:py-24 lg:py-28"
 		>
 			<div className="mx-auto max-w-[1200px] px-5 lg:px-8">
-				<header className={`mb-10 border-b ${border} pb-7 sm:mb-12 sm:pb-8 lg:mb-14`}>
+				<header className="mb-10 border-b border-[var(--border-color)] pb-7 sm:mb-12 sm:pb-8 lg:mb-14">
 					<div className="mb-3 flex flex-wrap items-center justify-between gap-3">
-						<p className={`font-mono-code text-[11px] uppercase tracking-[0.2em] sm:text-xs ${accent}`}>
+						<p className="font-mono-code text-[11px] uppercase tracking-[0.2em] sm:text-xs text-[#2563eb] dark:text-[#60a5fa]">
 							{'// CONTACT'}
 						</p>
-						<p className={`hidden items-center gap-2 font-mono-code text-[10px] uppercase tracking-[0.16em] sm:flex ${muted}`}>
+						<p className="hidden items-center gap-2 font-mono-code text-[10px] uppercase tracking-[0.16em] sm:flex text-[var(--text-muted)]">
 							<span className="h-1.5 w-1.5 rounded-full bg-[#3b82f6]" aria-hidden="true" />
 							Direct channels · message form
 						</p>
 					</div>
-					<h2
-						className={`text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-4xl lg:text-[2.75rem] ${heading}`}
-						style={{ fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif' }}
-					>
+					<h2 className="font-display text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-4xl lg:text-[2.75rem] text-[var(--text-primary)]">
 						Let’s Connect
 					</h2>
-					<p className={`mt-3.5 max-w-2xl text-base leading-relaxed ${muted}`}>
+					<p className="mt-3.5 max-w-2xl text-base leading-relaxed text-[var(--text-muted)]">
 						Open to entry-level Data Analyst &amp; Data Engineer opportunities. Reach out via direct channels or send a message below.
 					</p>
 				</header>
 
 				<div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:gap-10">
 					<div className="min-w-0 lg:col-span-5">
-						<div className={`border-t-2 border-[#3b82f6] pt-4`}>
-							<p className={`font-mono-code text-[10px] uppercase tracking-[0.16em] ${accent}`}>
+						<div className="border-t-2 border-[#3b82f6] pt-4">
+							<p className="font-mono-code text-[10px] uppercase tracking-[0.16em] text-[#2563eb] dark:text-[#60a5fa]">
 								Primary channel
 							</p>
 							<a
 								href={`mailto:${profileData.email}`}
 								aria-label={`Email Mahmoud at ${profileData.email}`}
-								className={`group mt-2 inline-flex max-w-full items-start gap-2 text-lg font-semibold leading-snug tracking-[-0.02em] ${primary} transition-colors ${dark ? 'hover:text-[#60a5fa]' : 'hover:text-[#1d4ed8]'} ${focusRing} focus-visible:ring-offset-4 ${dark ? 'focus-visible:ring-offset-[#0b0e14]' : 'focus-visible:ring-offset-[var(--bg-primary)]'} sm:text-xl`}
+								className="group mt-2 inline-flex max-w-full items-start gap-2 text-lg font-semibold leading-snug tracking-[-0.02em] text-[var(--text-primary)] transition-colors hover:text-[#1d4ed8] dark:hover:text-[#60a5fa] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b82f6] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--bg-primary)] sm:text-xl"
 							>
 								<span className="break-all">{profileData.email}</span>
-								<ArrowUpRight className={`mt-1 h-4 w-4 shrink-0 ${iconAccent}`} aria-hidden="true" />
+								<ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-[#2563eb] dark:text-[#60a5fa]" aria-hidden="true" />
 							</a>
 						</div>
 
-						<dl className={`mt-7 border-y ${divider} py-5`}>
+						<dl className="mt-7 border-y border-[var(--border-color)]/70 py-5">
 							<div>
-								<dt className={`mb-1 flex items-center gap-2 font-mono-code text-[10px] uppercase tracking-[0.14em] ${muted}`}>
-									<MapPin className={`h-3.5 w-3.5 ${iconAccent}`} aria-hidden="true" /> Location
+								<dt className="mb-1 flex items-center gap-2 font-mono-code text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
+									<MapPin className="h-3.5 w-3.5 text-[#2563eb] dark:text-[#60a5fa]" aria-hidden="true" /> Location
 								</dt>
-								<dd className={`text-sm font-medium ${secondary}`}>{profileData.location}</dd>
+								<dd className="text-sm font-medium text-[var(--text-secondary)]">{profileData.location}</dd>
 							</div>
 						</dl>
 
 						<div className="mt-6">
-							<p className={`mb-2 font-mono-code text-[10px] uppercase tracking-[0.16em] ${muted}`}>
+							<p className="mb-2 font-mono-code text-[10px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
 								Other channels
 							</p>
 							<ul className="flex flex-wrap gap-x-5 gap-y-1">
 								<li>
 									<a href={profileData.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)" className={socialLinkClass}>
-										<LinkedinIcon className={`h-3.5 w-3.5 ${iconAccent}`} aria-hidden="true" /> LinkedIn
+										<LinkedinIcon className="h-3.5 w-3.5 text-[#2563eb] dark:text-[#60a5fa]" aria-hidden="true" /> LinkedIn
 									</a>
 								</li>
 								<li>
 									<a href={profileData.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)" className={socialLinkClass}>
-										<Code2 className={`h-3.5 w-3.5 ${iconAccent}`} aria-hidden="true" /> GitHub
+										<Code2 className="h-3.5 w-3.5 text-[#2563eb] dark:text-[#60a5fa]" aria-hidden="true" /> GitHub
 									</a>
 								</li>
 								<li>
 									<a href={profileData.kaggle} target="_blank" rel="noopener noreferrer" aria-label="Kaggle (opens in a new tab)" className={socialLinkClass}>
-										<BarChart3 className={`h-3.5 w-3.5 ${iconAccent}`} aria-hidden="true" /> Kaggle
+										<BarChart3 className="h-3.5 w-3.5 text-[#2563eb] dark:text-[#60a5fa]" aria-hidden="true" /> Kaggle
 									</a>
 								</li>
 							</ul>
 						</div>
 					</div>
 
-					<div className={`min-w-0 overflow-hidden rounded-[6px] border ${border} ${surface} lg:col-span-7`}>
-						<div className={`border-b ${border} ${surfaceRaised} px-5 py-4 sm:px-6`}>
-							<p className={`font-mono-code text-[10px] uppercase tracking-[0.16em] ${accent}`}>
+					<div className="min-w-0 overflow-hidden rounded-[6px] border border-[var(--border-color)] bg-[var(--bg-card)] lg:col-span-7">
+						<div className="border-b border-[var(--border-color)] bg-[var(--bg-soft)] px-5 py-4 sm:px-6">
+							<p className="font-mono-code text-[10px] uppercase tracking-[0.16em] text-[#2563eb] dark:text-[#60a5fa]">
 								Contact form
 							</p>
 							<h3
 								id="contact-form-title"
-								className={`mt-1 text-xl font-semibold tracking-[-0.02em] ${heading}`}
-								style={{ fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif' }}
+								className="font-display mt-1 text-xl font-semibold tracking-[-0.02em] text-[var(--text-primary)]"
 							>
 								Send a message
 							</h3>
@@ -210,7 +188,7 @@ export function ContactApiRequest() {
 								/>
 							</div>
 							<div className="sm:col-span-2">
-								<label className={labelClass} htmlFor="contact-subject">Subject <span className={muted}>(optional)</span></label>
+								<label className={labelClass} htmlFor="contact-subject">Subject <span className="text-[var(--text-muted)]">(optional)</span></label>
 								<input
 									id="contact-subject"
 									type="text"
@@ -237,18 +215,18 @@ export function ContactApiRequest() {
 								<button
 									type="submit"
 									disabled={status === 'submitting'}
-									className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-[4px] bg-[#2563eb] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d4ed8] disabled:cursor-not-allowed disabled:opacity-60 ${focusRing} focus-visible:ring-offset-2 ${dark ? 'focus-visible:ring-offset-[#10141d]' : 'focus-visible:ring-offset-white'}`}
+									className="inline-flex min-h-11 items-center justify-center gap-2 rounded-[4px] bg-[#2563eb] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d4ed8] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b82f6] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-card)]"
 								>
 									{status === 'submitting' ? 'Sending…' : 'Send message'}
 									{status === 'submitting' ? null : <Send className="h-4 w-4" aria-hidden="true" />}
 								</button>
 								{status === 'success' && (
-									<p className={`flex items-center gap-1.5 text-sm font-medium ${dark ? 'text-[#6ee7b7]' : 'text-[#166534]'}`} role="status">
+									<p className="flex items-center gap-1.5 text-sm font-medium text-[#166534] dark:text-[#6ee7b7]" role="status">
 										<CheckCircle2 className="h-4 w-4" aria-hidden="true" /> Message sent. Thank you.
 									</p>
 								)}
 								{status === 'error' && (
-									<p className={`text-sm font-medium ${dark ? 'text-[#fca5a5]' : 'text-[#b91c1c]'}`} role="alert">
+									<p className="text-sm font-medium text-[#b91c1c] dark:text-[#fca5a5]" role="alert">
 										{errorMessage}
 									</p>
 								)}

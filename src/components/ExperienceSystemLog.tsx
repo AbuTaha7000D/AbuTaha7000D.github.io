@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { useTheme } from './ThemeProvider';
 import { experienceData } from '@/data/experience';
 import {
 	Building2,
@@ -20,26 +19,6 @@ import {
 } from 'lucide-react';
 
 export function ExperienceSystemLog() {
-	const { theme } = useTheme();
-	const dark = theme === 'dark';
-
-	// Cohesive color tokens adhering to the Kube Labs-inspired design language with intentional dark/light contrast
-	const surfaceCard = dark ? 'bg-[#10141d]' : 'bg-[var(--bg-card)]';
-	const surfaceRaised = dark ? 'bg-[#131824]' : 'bg-[var(--bg-soft)]';
-	const surfaceSubtle = dark ? 'bg-[#0e121a]' : 'bg-[var(--bg-primary)]';
-	const borderMain = dark ? 'border-[#212836]' : 'border-[var(--border-color)]';
-	const borderDivider = dark ? 'border-[#212836]/60' : 'border-[var(--border-color)]';
-	const borderSubtle = dark ? 'border-[#212836]/40' : 'border-[var(--border-color)]/70';
-	const textHeading = dark ? 'text-white' : 'text-[var(--text-primary)]';
-	const textPrimary = dark ? 'text-[#e6e9ef]' : 'text-[var(--text-primary)]';
-	const textSecondary = dark ? 'text-[#c7cdd9]' : 'text-[var(--text-secondary)]';
-	const textMuted = dark ? 'text-[#8a93a6]' : 'text-[var(--text-muted)]';
-	const accentBlue = dark ? 'text-[#60a5fa]' : 'text-[#1d4ed8]';
-	const iconBlue = dark ? 'text-[#3b82f6]' : 'text-[#2563eb]';
-	const badgeBg = dark
-		? 'bg-[#3b82f6]/10 border-[#3b82f6]/30 text-[#60a5fa]'
-		: 'bg-[#3b82f6]/10 border-[#3b82f6]/40 text-[#1d4ed8]';
-
 	// Highlight icons mapping for structured scannability
 	const highlightIcons = [
 		FileSpreadsheet,
@@ -97,8 +76,7 @@ export function ExperienceSystemLog() {
 	return (
 		<section
 			id="experience"
-			className={`relative overflow-hidden border-b ${borderMain} ${dark ? 'bg-[#0b0e14]' : 'bg-[var(--bg-primary)]'
-				} pt-20 pb-20 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-28 transition-colors duration-200`}
+			className="relative overflow-hidden border-b border-[var(--border-color)] bg-[var(--bg-primary)] pt-20 pb-20 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-28 transition-colors duration-200"
 		>
 			{/* Architectural background: disciplined coordinate grid */}
 			<div
@@ -112,25 +90,22 @@ export function ExperienceSystemLog() {
 
 			<div className="relative mx-auto max-w-[1200px] px-5 lg:px-8">
 				{/* Section Header */}
-				<div className={`mb-12 border-b ${borderMain} pb-8 sm:mb-14 lg:mb-16`}>
+				<div className="mb-12 border-b border-[var(--border-color)] pb-8 sm:mb-14 lg:mb-16">
 					<div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-						<div className={`flex items-center gap-2 font-mono-code text-[11px] sm:text-xs uppercase tracking-[0.2em] ${accentBlue}`}>
+						<div className="flex items-center gap-2 font-mono-code text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#2563eb] dark:text-[#60a5fa]">
 							<span>{'// EXPERIENCE'}</span>
 						</div>
-						<div className={`hidden sm:flex items-center gap-2 font-mono-code text-[10px] uppercase tracking-[0.16em] ${textMuted}`}>
-							<span className="h-1.5 w-1.5 rounded-full bg-[#3b82f6]" />
+						<div className="hidden sm:flex items-center gap-2 font-mono-code text-[10px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
+							<span className="h-1.5 w-1.5 rounded-full bg-[#2563eb] dark:bg-[#3b82f6]" />
 							<span>OPERATIONAL SYSTEMS &amp; DATA MANAGEMENT</span>
 						</div>
 					</div>
 
-					<h2
-						className={`text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-[-0.03em] leading-[1.1] ${textHeading}`}
-						style={{ fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif' }}
-					>
+					<h2 className="font-display text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-[-0.03em] leading-[1.1] text-[var(--text-primary)]">
 						Applied Operational Experience
 					</h2>
 
-					<p className={`mt-3.5 max-w-2xl text-[1rem] sm:text-[1.0625rem] leading-relaxed ${textMuted}`}>
+					<p className="mt-3.5 max-w-2xl text-[1rem] sm:text-[1.0625rem] leading-relaxed text-[var(--text-muted)]">
 						Where technical problem-solving meets practical operational execution: tracking session datasets,
 						coordinating technical workflows, and supporting instructional infrastructure.
 					</p>
@@ -161,28 +136,26 @@ export function ExperienceSystemLog() {
 						return (
 							<div
 								key={job.id}
-								className={`rounded-[6px] border ${borderMain} ${surfaceCard} shadow-sm overflow-hidden`}
+								className="rounded-[6px] border border-[var(--border-color)] bg-[var(--bg-card)] shadow-sm overflow-hidden"
 							>
 								{/* Entry Header Console Bar */}
-								<div
-									className={`flex flex-wrap items-center justify-between gap-3 border-b ${borderMain} ${surfaceRaised} px-5 py-3`}
-								>
+								<div className="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border-color)] bg-[var(--bg-soft)] px-5 py-3">
 									<div className="flex items-center gap-3">
-										<span className={`font-mono-code text-xs font-semibold ${accentBlue}`}>
+										<span className="font-mono-code text-xs font-semibold text-[#1d4ed8] dark:text-[#60a5fa]">
 											{`[${entryNum}]`}
 										</span>
-										<span className={`font-mono-code text-[11px] uppercase tracking-[0.16em] ${textSecondary}`}>
+										<span className="font-mono-code text-[11px] uppercase tracking-[0.16em] text-[var(--text-secondary)]">
 											RECORD_ID: {job.id.replace(/-/g, '_')}
 										</span>
 									</div>
 
 									<div className="flex items-center gap-3 font-mono-code text-[11px] uppercase tracking-[0.14em]">
-										<span className={`hidden sm:flex items-center gap-1.5 ${isCurrent ? accentBlue : textMuted}`}>
-											{isCurrent && <span className="h-1.5 w-1.5 rounded-full bg-[#3b82f6] animate-pulse" />}
+										<span className={`hidden sm:flex items-center gap-1.5 ${isCurrent ? 'text-[#1d4ed8] dark:text-[#60a5fa] font-medium' : 'text-[var(--text-muted)]'}`}>
+											{isCurrent && <span className="h-1.5 w-1.5 rounded-full bg-[#2563eb] dark:bg-[#3b82f6] animate-pulse" />}
 											{isCurrent ? 'STATUS: CURRENT' : 'STATUS: COMPLETED'}
 										</span>
-										<span className={`hidden sm:inline ${textMuted}`}>/</span>
-										<span className={`rounded-[3px] border px-2 py-0.5 text-[10px] font-medium tracking-[0.12em] ${badgeBg}`}>
+										<span className="hidden sm:inline text-[var(--text-muted)]">/</span>
+										<span className="rounded-[3px] border border-[#3b82f6]/30 bg-[#3b82f6]/10 px-2 py-0.5 text-[10px] font-medium tracking-[0.12em] text-[#1d4ed8] dark:text-[#60a5fa]">
 											{isRemote ? 'REMOTE OPERATIONS' : 'ON-SITE OPERATIONS'}
 										</span>
 									</div>
@@ -193,25 +166,22 @@ export function ExperienceSystemLog() {
 									{/* Column 1: Role, Organization, Narrative, and Responsibilities */}
 									<div className="space-y-6 min-w-0">
 										<div>
-											<h3
-												className={`text-2xl sm:text-3xl font-semibold tracking-[-0.025em] leading-snug ${textHeading}`}
-												style={{ fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif' }}
-											>
+											<h3 className="font-display text-2xl sm:text-3xl font-semibold tracking-[-0.025em] leading-snug text-[var(--text-primary)]">
 												{job.role}
 											</h3>
 
 											<div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 font-mono-code text-xs">
-												<span className={`flex items-center gap-1.5 ${textPrimary} font-medium`}>
-													<Building2 className={`h-3.5 w-3.5 ${iconBlue}`} />
+												<span className="flex items-center gap-1.5 text-[var(--text-primary)] font-medium">
+													<Building2 className="h-3.5 w-3.5 text-[#2563eb] dark:text-[#3b82f6]" />
 													{job.company}
 												</span>
-												<span className={textMuted}>/</span>
-												<span className={`flex items-center gap-1.5 ${textMuted}`}>
+												<span className="text-[var(--text-muted)]">/</span>
+												<span className="flex items-center gap-1.5 text-[var(--text-muted)]">
 													<MapPin className="h-3.5 w-3.5" />
 													{job.location}
 												</span>
-												<span className={textMuted}>/</span>
-												<span className={`flex items-center gap-1.5 ${accentBlue}`}>
+												<span className="text-[var(--text-muted)]">/</span>
+												<span className="flex items-center gap-1.5 text-[#1d4ed8] dark:text-[#60a5fa]">
 													<Calendar className="h-3.5 w-3.5" />
 													{job.period}
 												</span>
@@ -219,13 +189,13 @@ export function ExperienceSystemLog() {
 										</div>
 
 										{/* High-level Summary Narrative */}
-										<p className={`text-[0.9375rem] sm:text-[1rem] leading-relaxed ${textMuted}`}>
+										<p className="text-[0.9375rem] sm:text-[1rem] leading-relaxed text-[var(--text-muted)]">
 											{job.summary}
 										</p>
 
 										{/* Core Operational Responsibilities */}
 										<div className="pt-2">
-											<div className={`flex items-center justify-between pb-2 mb-3 border-b ${borderDivider} font-mono-code text-[10px] uppercase tracking-[0.16em] ${textMuted}`}>
+											<div className="flex items-center justify-between pb-2 mb-3 border-b border-[var(--border-color)] font-mono-code text-[10px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
 												<span>CORE RESPONSIBILITIES &amp; EXECUTION</span>
 												<span>{job.highlights.length} KEY AREAS</span>
 											</div>
@@ -237,17 +207,17 @@ export function ExperienceSystemLog() {
 													return (
 														<li
 															key={j}
-															className={`rounded-[4px] border ${borderMain} ${surfaceRaised} p-3.5 transition-colors duration-150 hover:border-[#3b82f6]/40`}
+															className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-soft)] p-3.5 transition-colors duration-150 hover:border-[#3b82f6]/40"
 														>
 															<div className="flex items-start gap-3">
-																<div className={`mt-0.5 shrink-0 p-1.5 rounded-[3px] ${surfaceSubtle} border ${borderMain}`}>
-																	<IconComponent className={`h-3.5 w-3.5 ${iconBlue}`} />
+																<div className="mt-0.5 shrink-0 p-1.5 rounded-[3px] bg-[var(--bg-primary)] border border-[var(--border-color)]">
+																	<IconComponent className="h-3.5 w-3.5 text-[#2563eb] dark:text-[#3b82f6]" />
 																</div>
-																<p className={`text-xs sm:text-[0.875rem] leading-relaxed ${textSecondary}`}>
+																<p className="text-xs sm:text-[0.875rem] leading-relaxed text-[var(--text-secondary)]">
 																	{point}
 																</p>
 															</div>
-								</li>
+														</li>
 													);
 												})}
 											</ul>
@@ -256,67 +226,65 @@ export function ExperienceSystemLog() {
 
 									{/* Column 2: Operational Manifest & Engineering Contribution Console */}
 									<div className="space-y-5 min-w-0">
-										<div className={`rounded-[6px] border ${borderMain} ${surfaceRaised} p-5 space-y-4`}>
-							<div className={`flex items-center justify-between gap-x-2 pb-2.5 border-b ${borderDivider} font-mono-code text-[10px] uppercase tracking-[0.16em] ${textMuted}`}>
+										<div className="rounded-[6px] border border-[var(--border-color)] bg-[var(--bg-soft)] p-5 space-y-4">
+											<div className="flex items-center justify-between gap-x-2 pb-2.5 border-b border-[var(--border-color)] font-mono-code text-[10px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
 												<span className="flex items-center gap-1.5">
-													<ShieldCheck className={`h-3 w-3 ${iconBlue}`} />
+													<ShieldCheck className="h-3 w-3 text-[#2563eb] dark:text-[#3b82f6]" />
 													{manifest.title}
 												</span>
-								<span className={accentBlue}>ROLE SUMMARY</span>
+												<span className="text-[#1d4ed8] dark:text-[#60a5fa] font-semibold">ROLE SUMMARY</span>
 											</div>
 
 											<div className="space-y-3 font-mono-code text-xs">
 												<div className="space-y-1">
-													<div className={`text-[10px] uppercase tracking-[0.12em] ${textMuted}`}>
+													<div className="text-[10px] uppercase tracking-[0.12em] text-[var(--text-muted)]">
 														PRIMARY DOMAIN
 													</div>
-													<div className={`${textPrimary} font-medium text-[11px] sm:text-xs`}>
+													<div className="text-[var(--text-primary)] font-medium text-[11px] sm:text-xs">
 														{manifest.domain}
 													</div>
 												</div>
 
-												<div className={`space-y-1 pt-2.5 border-t ${borderSubtle}`}>
-													<div className={`text-[10px] uppercase tracking-[0.12em] ${textMuted}`}>
+												<div className="space-y-1 pt-2.5 border-t border-[var(--border-color)]/60">
+													<div className="text-[10px] uppercase tracking-[0.12em] text-[var(--text-muted)]">
 														DATA &amp; TRACKING PRACTICE
 													</div>
-													<div className={`${textSecondary} text-[11px] sm:text-xs`}>
+													<div className="text-[var(--text-secondary)] text-[11px] sm:text-xs">
 														{manifest.dataPractice}
 													</div>
 												</div>
 
-												<div className={`space-y-1 pt-2.5 border-t ${borderSubtle}`}>
-													<div className={`text-[10px] uppercase tracking-[0.12em] ${textMuted}`}>
+												<div className="space-y-1 pt-2.5 border-t border-[var(--border-color)]/60">
+													<div className="text-[10px] uppercase tracking-[0.12em] text-[var(--text-muted)]">
 														INFRASTRUCTURE &amp; SYSTEMS
 													</div>
-													<div className={`${textSecondary} text-[11px] sm:text-xs`}>
+													<div className="text-[var(--text-secondary)] text-[11px] sm:text-xs">
 														{manifest.infrastructure}
 													</div>
 												</div>
 
-												<div className={`space-y-1 pt-2.5 border-t ${borderSubtle}`}>
-													<div className={`text-[10px] uppercase tracking-[0.12em] ${textMuted}`}>
+												<div className="space-y-1 pt-2.5 border-t border-[var(--border-color)]/60">
+													<div className="text-[10px] uppercase tracking-[0.12em] text-[var(--text-muted)]">
 														ENGINEERING TAKEAWAY
 													</div>
-													<div className={`${textMuted} text-[11px] sm:text-xs leading-relaxed`}>
+													<div className="text-[var(--text-muted)] text-[11px] sm:text-xs leading-relaxed">
 														{manifest.takeaway}
 													</div>
 												</div>
 											</div>
 
-											<div
-												className={`mt-4 pt-3 border-t ${borderDivider} flex items-center justify-between font-mono-code text-[10px] uppercase tracking-[0.14em] ${textMuted}`}
-											>
+											<div className="mt-4 pt-3 border-t border-[var(--border-color)] flex items-center justify-between font-mono-code text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
 												<span>LOCATION: {job.location.toUpperCase()}</span>
-												<span className="text-emerald-500 dark:text-emerald-400 font-medium">
+												<span className="text-[#15803d] dark:text-emerald-400 font-semibold">
 													{manifest.statusBadge}
 												</span>
 											</div>
 										</div>
 
 										{/* Grounded Engineering Takeaways Bar */}
-										<div className={`rounded-[6px] border ${borderMain} ${surfaceCard} p-4 font-mono-code text-xs space-y-2.5`}>
-											<div className={`flex items-center gap-1.5 text-[10px] uppercase tracking-[0.16em] ${textMuted}`}>
-												<Sparkles className={`h-3 w-3 ${iconBlue}`} />
+										<div className="rounded-[6px] border border-[var(--border-color)] bg-[var(--bg-card)] p-4 font-mono-code text-xs space-y-2.5">
+											<div className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
+												<Sparkles className="h-3 w-3 text-[#2563eb] dark:text-[#3b82f6]" />
 												<span>TRANSFERABLE DATA CAPABILITIES</span>
 											</div>
 
@@ -324,10 +292,10 @@ export function ExperienceSystemLog() {
 												{manifest.capabilities.map((cap, cIdx) => (
 													<div
 														key={cIdx}
-														className={`p-2 rounded-[3px] border ${borderSubtle} ${surfaceRaised} flex items-center gap-2`}
+														className="p-2 rounded-[3px] border border-[var(--border-color)]/60 bg-[var(--bg-soft)] flex items-center gap-2"
 													>
-														<CheckCircle2 className={`h-3 w-3 ${iconBlue} shrink-0`} />
-														<span className={textSecondary}>{cap}</span>
+														<CheckCircle2 className="h-3 w-3 text-[#2563eb] dark:text-[#3b82f6] shrink-0" />
+														<span className="text-[var(--text-secondary)]">{cap}</span>
 													</div>
 												))}
 											</div>

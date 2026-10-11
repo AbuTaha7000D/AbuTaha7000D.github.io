@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { useTheme } from './ThemeProvider';
 import { projectsData } from '@/data/projects';
 import {
 	Database,
@@ -16,26 +15,6 @@ import {
 } from 'lucide-react';
 
 export function ProjectsSection() {
-	const { theme } = useTheme();
-	const dark = theme === 'dark';
-
-	// Cohesive color tokens adhering to the Kube Labs-inspired design language with intentional dark/light contrast
-	const surfaceCard = dark ? 'bg-[#10141d]' : 'bg-[var(--bg-card)]';
-	const surfaceRaised = dark ? 'bg-[#131824]' : 'bg-[var(--bg-soft)]';
-	const surfaceSubtle = dark ? 'bg-[#0e121a]' : 'bg-[var(--bg-primary)]';
-	const borderMain = dark ? 'border-[#212836]' : 'border-[var(--border-color)]';
-	const borderDivider = dark ? 'border-[#212836]/60' : 'border-[var(--border-color)]';
-	const borderSubtle = dark ? 'border-[#212836]/40' : 'border-[var(--border-color)]/70';
-	const textHeading = dark ? 'text-white' : 'text-[var(--text-primary)]';
-	const textPrimary = dark ? 'text-[#e6e9ef]' : 'text-[var(--text-primary)]';
-	const textSecondary = dark ? 'text-[#c7cdd9]' : 'text-[var(--text-secondary)]';
-	const textMuted = dark ? 'text-[#8a93a6]' : 'text-[var(--text-muted)]';
-	const accentBlue = dark ? 'text-[#60a5fa]' : 'text-[#1d4ed8]';
-	const iconBlue = dark ? 'text-[#3b82f6]' : 'text-[#2563eb]';
-	const badgeBg = dark
-		? 'bg-[#3b82f6]/10 border-[#3b82f6]/30 text-[#60a5fa]'
-		: 'bg-[#3b82f6]/10 border-[#3b82f6]/40 text-[#1d4ed8]';
-
 	// Domain configurations mapping strictly to existing project fields
 	const projectConfigs: Record<
 		string,
@@ -70,8 +49,7 @@ export function ProjectsSection() {
 	return (
 		<section
 			id="projects"
-			className={`relative overflow-hidden border-b ${borderMain} ${dark ? 'bg-[#0b0e14]' : 'bg-[var(--bg-primary)]'
-				} pt-20 pb-20 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-28 transition-colors duration-200`}
+			className="relative overflow-hidden border-b border-[var(--border-color)] bg-[var(--bg-primary)] pt-20 pb-20 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-28 transition-colors duration-200"
 		>
 			{/* Architectural background: disciplined coordinate grid */}
 			<div
@@ -85,25 +63,22 @@ export function ProjectsSection() {
 
 			<div className="relative mx-auto max-w-[1200px] px-5 lg:px-8">
 				{/* Section Header */}
-				<div className={`mb-12 border-b ${borderMain} pb-8 sm:mb-14 lg:mb-16`}>
+				<div className="mb-12 border-b border-[var(--border-color)] pb-8 sm:mb-14 lg:mb-16">
 					<div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-						<div className={`flex items-center gap-2 font-mono-code text-[11px] sm:text-xs uppercase tracking-[0.2em] ${accentBlue}`}>
+						<div className="flex items-center gap-2 font-mono-code text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#2563eb] dark:text-[#60a5fa]">
 							<span>{'// TECHNICAL.PROJECTS'}</span>
 						</div>
-						<div className={`hidden sm:flex items-center gap-2 font-mono-code text-[10px] uppercase tracking-[0.16em] ${textMuted}`}>
+						<div className="hidden sm:flex items-center gap-2 font-mono-code text-[10px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
 							<span className="h-1.5 w-1.5 rounded-full bg-[#3b82f6]" />
 							<span>SOURCE REPOSITORIES · {projectsData.length} BUILDS</span>
 						</div>
 					</div>
 
-					<h2
-						className={`text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-[-0.03em] leading-[1.1] ${textHeading}`}
-						style={{ fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif' }}
-					>
+					<h2 className="font-display text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-[-0.03em] leading-[1.1] text-[var(--text-primary)]">
 						Selected Engineering Projects
 					</h2>
 
-					<p className={`mt-3.5 max-w-2xl text-[1rem] sm:text-[1.0625rem] leading-relaxed ${textMuted}`}>
+					<p className="mt-3.5 max-w-2xl text-[1rem] sm:text-[1.0625rem] leading-relaxed text-[var(--text-muted)]">
 						Practical builds applying relational modeling, media processing, software design, and automation
 						to technical problems.
 					</p>
@@ -123,25 +98,23 @@ export function ProjectsSection() {
 						return (
 							<article
 								key={project.id}
-								className={`rounded-[6px] border ${borderMain} ${surfaceCard} shadow-sm overflow-hidden`}
+								className="rounded-[6px] border border-[var(--border-color)] bg-[var(--bg-card)] shadow-sm overflow-hidden"
 							>
 								{/* Project Console Header Bar */}
-								<div
-									className={`flex flex-wrap items-center justify-between gap-3 border-b ${borderMain} ${surfaceRaised} px-5 py-3`}
-								>
+								<div className="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border-color)] bg-[var(--bg-soft)] px-5 py-3">
 									<div className="flex items-center gap-3">
-										<span className={`font-mono-code text-xs font-semibold ${accentBlue}`}>
+										<span className="font-mono-code text-xs font-semibold text-[#2563eb] dark:text-[#60a5fa]">
 											{`[${num}]`}
 										</span>
-										<span className={`font-mono-code text-[11px] uppercase tracking-[0.16em] ${textSecondary}`}>
+										<span className="font-mono-code text-[11px] uppercase tracking-[0.16em] text-[var(--text-secondary)]">
 											PROJECT_ID: {project.id.replace(/-/g, '_')}
 										</span>
 									</div>
 
 									<div className="flex items-center gap-3 font-mono-code text-[11px] uppercase tracking-[0.14em]">
-										<span className={`hidden sm:inline ${textMuted}`}>{config.scopeType}</span>
-										<span className={`hidden sm:inline ${textMuted}`}>/</span>
-										<span className={`rounded-[3px] border px-2 py-0.5 text-[10px] font-medium tracking-[0.12em] ${badgeBg}`}>
+										<span className="hidden sm:inline text-[var(--text-muted)]">{config.scopeType}</span>
+										<span className="hidden sm:inline text-[var(--text-muted)]">/</span>
+										<span className="rounded-[3px] border border-[#3b82f6]/30 bg-[#3b82f6]/10 px-2 py-0.5 text-[10px] font-medium tracking-[0.12em] text-[#1d4ed8] dark:text-[#60a5fa]">
 											{config.domainBadge}
 										</span>
 									</div>
@@ -153,22 +126,19 @@ export function ProjectsSection() {
 									<div className="space-y-6 min-w-0">
 										<div>
 											<div className="flex items-center gap-3">
-												<div className={`p-2 rounded-[3px] ${surfaceSubtle} border ${borderMain} shrink-0`}>
-													<DomainIcon className={`h-4 w-4 ${iconBlue}`} />
+												<div className="p-2 rounded-[3px] bg-[var(--bg-primary)] border border-[var(--border-color)] shrink-0">
+													<DomainIcon className="h-4 w-4 text-[#2563eb] dark:text-[#3b82f6]" />
 												</div>
-												<h3
-													className={`text-2xl sm:text-3xl font-semibold tracking-[-0.025em] leading-snug ${textHeading}`}
-													style={{ fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif' }}
-												>
+												<h3 className="font-display text-2xl sm:text-3xl font-semibold tracking-[-0.025em] leading-snug text-[var(--text-primary)]">
 													{project.title}
 												</h3>
 											</div>
 
-											<p className={`mt-2 font-mono-code text-xs uppercase tracking-[0.12em] ${accentBlue}`}>
+											<p className="mt-2 font-mono-code text-xs uppercase tracking-[0.12em] text-[#2563eb] dark:text-[#60a5fa]">
 												{project.subtitle}
 											</p>
 
-											<p className={`mt-3.5 text-[0.9375rem] sm:text-[1rem] leading-relaxed ${textMuted}`}>
+											<p className="mt-3.5 text-[0.9375rem] sm:text-[1rem] leading-relaxed text-[var(--text-muted)]">
 												{project.description}
 											</p>
 										</div>
@@ -176,23 +146,23 @@ export function ProjectsSection() {
 										{/* Problem & Solution Case Study Compartments */}
 										<div className="space-y-3.5">
 											{/* Problem Compartment */}
-											<div className={`rounded-[4px] border ${borderMain} ${surfaceRaised} p-4 space-y-1.5`}>
-												<div className={`flex items-center justify-between font-mono-code text-[10px] uppercase tracking-[0.16em] ${accentBlue}`}>
+											<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-soft)] p-4 space-y-1.5">
+												<div className="flex items-center justify-between font-mono-code text-[10px] uppercase tracking-[0.16em] text-[#2563eb] dark:text-[#60a5fa]">
 													<span>01 // THE CHALLENGE &amp; PROBLEM</span>
 													<span>CONTEXT</span>
 												</div>
-												<p className={`text-xs sm:text-[0.875rem] leading-relaxed ${textSecondary}`}>
+												<p className="text-xs sm:text-[0.875rem] leading-relaxed text-[var(--text-secondary)]">
 													{project.problem}
 												</p>
 											</div>
 
 											{/* What I Built Compartment */}
-											<div className={`rounded-[4px] border ${borderMain} ${surfaceSubtle} p-4 space-y-1.5`}>
-												<div className={`flex items-center justify-between font-mono-code text-[10px] uppercase tracking-[0.16em] ${accentBlue}`}>
+											<div className="rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-primary)] p-4 space-y-1.5">
+												<div className="flex items-center justify-between font-mono-code text-[10px] uppercase tracking-[0.16em] text-[#2563eb] dark:text-[#60a5fa]">
 													<span>02 // ARCHITECTURE &amp; WHAT I BUILT</span>
 													<span>IMPLEMENTATION</span>
 												</div>
-												<p className={`text-xs sm:text-[0.875rem] leading-relaxed ${textPrimary}`}>
+												<p className="text-xs sm:text-[0.875rem] leading-relaxed text-[var(--text-primary)]">
 													{project.whatIBuilt}
 												</p>
 											</div>
@@ -206,11 +176,11 @@ export function ProjectsSection() {
 													target="_blank"
 													rel="noopener noreferrer"
 													aria-label={`View ${project.title} source repository (opens in a new tab)`}
-													className={`group inline-flex items-center gap-2 rounded-[4px] border ${borderMain} ${surfaceRaised} px-4 py-2 font-mono-code text-xs uppercase tracking-[0.1em] font-medium ${textPrimary} transition-colors duration-150 hover:border-[#3b82f6]/60 ${dark ? 'hover:text-[#60a5fa]' : 'hover:text-[#1d4ed8]'} focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]`}
+													className="group inline-flex items-center gap-2 rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-soft)] px-4 py-2 font-mono-code text-xs uppercase tracking-[0.1em] font-medium text-[var(--text-primary)] transition-colors duration-150 hover:border-[#3b82f6]/60 hover:text-[#1d4ed8] dark:hover:text-[#60a5fa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]"
 												>
 													<GitBranch className="h-3.5 w-3.5 text-[#3b82f6]" />
 													<span>VIEW SOURCE REPOSITORY</span>
-													<ArrowUpRight className={`h-3.5 w-3.5 ${textMuted} transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5`} aria-hidden="true" />
+													<ArrowUpRight className="h-3.5 w-3.5 text-[var(--text-muted)] transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
 												</a>
 											</div>
 										)}
@@ -220,8 +190,8 @@ export function ProjectsSection() {
 									<div className="space-y-6 min-w-0">
 										{/* Relevant Concepts & Architectural Practices */}
 										{project.relevantConcepts.length > 0 && (
-											<div className={`rounded-[6px] border ${borderMain} ${surfaceRaised} p-5 space-y-3`}>
-												<div className={`flex items-center justify-between pb-2 border-b ${borderDivider} font-mono-code text-[10px] uppercase tracking-[0.16em] ${accentBlue}`}>
+											<div className="rounded-[6px] border border-[var(--border-color)] bg-[var(--bg-soft)] p-5 space-y-3">
+												<div className="flex items-center justify-between pb-2 border-b border-[var(--border-color)]/70 font-mono-code text-[10px] uppercase tracking-[0.16em] text-[#2563eb] dark:text-[#60a5fa]">
 													<span>03 // CORE CONCEPTS &amp; PRACTICES</span>
 													<span>DATA RIGOR</span>
 												</div>
@@ -230,7 +200,7 @@ export function ProjectsSection() {
 													{project.relevantConcepts.map((concept) => (
 														<span
 															key={concept}
-															className={`rounded-[3px] border ${borderSubtle} ${surfaceSubtle} px-2.5 py-1 font-mono-code text-[11px] leading-snug ${textSecondary}`}
+															className="rounded-[3px] border border-[var(--border-color)]/70 bg-[var(--bg-primary)] px-2.5 py-1 font-mono-code text-[11px] leading-snug text-[var(--text-secondary)]"
 														>
 															{concept}
 														</span>
@@ -241,8 +211,8 @@ export function ProjectsSection() {
 
 										{/* Key Technical Highlights & Deliverables */}
 										{project.highlights.length > 0 && (
-											<div className={`rounded-[6px] border ${borderMain} ${surfaceCard} p-5 space-y-3`}>
-												<div className={`flex items-center justify-between pb-2 border-b ${borderDivider} font-mono-code text-[10px] uppercase tracking-[0.16em] ${accentBlue}`}>
+											<div className="rounded-[6px] border border-[var(--border-color)] bg-[var(--bg-card)] p-5 space-y-3">
+												<div className="flex items-center justify-between pb-2 border-b border-[var(--border-color)]/70 font-mono-code text-[10px] uppercase tracking-[0.16em] text-[#2563eb] dark:text-[#60a5fa]">
 													<span>04 // DELIVERABLES &amp; HIGHLIGHTS</span>
 													<span>{project.highlights.length} POINTS</span>
 												</div>
@@ -253,16 +223,17 @@ export function ProjectsSection() {
 															key={highlight}
 															className="flex items-start gap-2.5 text-xs sm:text-[0.875rem] leading-relaxed"
 														>
-															<CheckCircle2 className={`h-3.5 w-3.5 ${iconBlue} shrink-0 mt-0.5`} />
-															<span className={textSecondary}>{highlight}</span>
+															<CheckCircle2 className="h-3.5 w-3.5 text-[#2563eb] dark:text-[#3b82f6] shrink-0 mt-0.5" />
+															<span className="text-[var(--text-secondary)]">{highlight}</span>
 														</li>
 													))}
 												</ul>
 											</div>
 										)}
+
 										{/* Technology Stack Tags */}
-										<div className={`rounded-[6px] border ${borderMain} ${surfaceRaised} p-4 font-mono-code text-xs space-y-2.5`}>
-											<div className={`flex items-center justify-between text-[10px] uppercase tracking-[0.16em] ${accentBlue}`}>
+										<div className="rounded-[6px] border border-[var(--border-color)] bg-[var(--bg-soft)] p-4 font-mono-code text-xs space-y-2.5">
+											<div className="flex items-center justify-between text-[10px] uppercase tracking-[0.16em] text-[#2563eb] dark:text-[#60a5fa]">
 												<span>05 // TECHNOLOGIES &amp; UTILITIES</span>
 												<span>STACK</span>
 											</div>
@@ -271,7 +242,7 @@ export function ProjectsSection() {
 												{project.technologies.map((tech) => (
 													<span
 														key={tech}
-														className={`rounded-[2px] border ${borderSubtle} ${surfaceSubtle} px-2 py-0.5 text-[11px] ${textPrimary}`}
+														className="rounded-[2px] border border-[var(--border-color)]/70 bg-[var(--bg-primary)] px-2 py-0.5 text-[11px] text-[var(--text-primary)]"
 													>
 														{tech}
 													</span>
@@ -286,14 +257,12 @@ export function ProjectsSection() {
 				</div>
 
 				{/* Section Footer Summary Bar */}
-				<div
-					className={`mt-12 border-t ${borderMain} pt-6 flex flex-wrap items-center justify-between gap-4 font-mono-code text-xs ${textMuted}`}
-				>
+				<div className="mt-12 border-t border-[var(--border-color)] pt-6 flex flex-wrap items-center justify-between gap-4 font-mono-code text-xs text-[var(--text-muted)]">
 					<div className="flex items-center gap-2">
-						<Sparkles className={`h-3.5 w-3.5 ${iconBlue}`} />
+						<Sparkles className="h-3.5 w-3.5 text-[#2563eb] dark:text-[#3b82f6]" />
 						<span>{'// END_OF_PROJECTS'}</span>
 					</div>
-					<div className={textSecondary}>
+					<div className="text-[var(--text-secondary)]">
 						{projectsData.length} BUILDS · PUBLIC SOURCE REPOSITORIES
 					</div>
 				</div>

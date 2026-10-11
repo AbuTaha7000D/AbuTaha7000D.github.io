@@ -67,8 +67,8 @@ export function SectionProgressRail() {
 											aria-hidden="true"
 											className={`shrink-0 h-[2px] rounded-[1px] transition-all duration-150 ease-out motion-reduce:transition-none ${
 												isActive
-													? 'w-9 bg-[#1d4ed8] dark:bg-[#3b82f6]'
-													: 'w-5 bg-[var(--border-subtle)] dark:bg-[#3c5456] group-hover:w-9 group-hover:bg-[#1d4ed8] dark:group-hover:bg-[#60a5fa] group-focus-visible:w-9 group-focus-visible:bg-[#1d4ed8] dark:group-focus-visible:bg-[#60a5fa]'
+													? 'w-9 bg-[#2563eb] dark:bg-[#3b82f6]'
+													: 'w-5 bg-[var(--border-subtle)] group-hover:w-9 group-hover:bg-[#2563eb] dark:group-hover:bg-[#60a5fa] group-focus-visible:w-9 group-focus-visible:bg-[#2563eb] dark:group-focus-visible:bg-[#60a5fa]'
 											}`}
 										/>
 									</div>
@@ -78,8 +78,8 @@ export function SectionProgressRail() {
 										aria-hidden="true"
 										className={`absolute left-full ml-2.5 top-1/2 -translate-y-1/2 font-mono-code text-[11px] uppercase tracking-[0.08em] transition-all duration-150 ease-out motion-reduce:transition-none whitespace-nowrap pointer-events-none ${
 											isActive
-												? 'opacity-100 translate-x-0 text-[#1d4ed8] dark:text-[#60a5fa] font-medium'
-												: 'opacity-0 -translate-x-1.5 group-hover:opacity-100 group-hover:translate-x-0 group-focus-visible:opacity-100 group-focus-visible:translate-x-0 text-[var(--text-secondary)] dark:text-[#b4c5c5] group-hover:text-[#1d4ed8] dark:group-hover:text-[#60a5fa]'
+												? 'opacity-100 translate-x-0 text-[#2563eb] dark:text-[#60a5fa] font-semibold'
+												: 'opacity-0 -translate-x-1.5 group-hover:opacity-100 group-hover:translate-x-0 group-focus-visible:opacity-100 group-focus-visible:translate-x-0 text-[var(--text-secondary)] group-hover:text-[#2563eb] dark:group-hover:text-[#60a5fa]'
 										}`}
 									>
 										{item.label}
@@ -105,12 +105,12 @@ export function SectionProgressRail() {
 					aria-label="Back to top"
 					title="Back to top"
 					onClick={returnToTop}
-					className="group/top relative flex items-center focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#3b82f6] rounded-[4px]"
+					className="group/top relative flex items-center focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#3b82f6] rounded-xs"
 				>
-					<span className="grid h-9 w-9 place-items-center rounded-[4px] border border-[var(--border-color)] dark:border-[#212836] bg-[var(--bg-card)] dark:bg-[#10141d] text-[#1d4ed8] dark:text-[#60a5fa] transition-colors duration-150 hover:border-[#3b82f6]/60 hover:bg-[#3b82f6]/10">
+					<span className="grid h-9 w-9 place-items-center rounded-xs border border-[var(--border-color)] bg-[var(--bg-card)] text-[#2563eb] dark:text-[#60a5fa] transition-colors duration-150 hover:border-[#3b82f6]/60 hover:bg-[var(--bg-card-hover)]">
 						<ArrowUp aria-hidden="true" className="h-4 w-4" />
 					</span>
-					<span className="absolute left-full ml-2.5 top-1/2 -translate-y-1/2 font-mono-code text-[11px] uppercase tracking-[0.08em] opacity-0 -translate-x-1.5 transition-all duration-150 group-hover/top:opacity-100 group-hover/top:translate-x-0 group-focus-visible/top:opacity-100 group-focus-visible/top:translate-x-0 whitespace-nowrap text-[var(--text-secondary)] dark:text-[#b4c5c5] pointer-events-none">
+					<span className="absolute left-full ml-2.5 top-1/2 -translate-y-1/2 font-mono-code text-[11px] uppercase tracking-[0.08em] opacity-0 -translate-x-1.5 transition-all duration-150 group-hover/top:opacity-100 group-hover/top:translate-x-0 group-focus-visible/top:opacity-100 group-focus-visible/top:translate-x-0 whitespace-nowrap text-[var(--text-secondary)] pointer-events-none">
 						TOP
 					</span>
 				</button>

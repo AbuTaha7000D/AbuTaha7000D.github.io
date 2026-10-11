@@ -2,21 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import { ArrowUp } from 'lucide-react';
-import { useTheme } from '@/components/ThemeProvider';
 import { profileData } from '@/data/profile';
 import { navigationData } from '@/data/navigation';
 
 export function Footer() {
-	const { theme } = useTheme();
 	const [showBackToTop, setShowBackToTop] = useState(false);
-	const dark = theme === 'dark';
-	const sectionBg = dark ? 'bg-[#0b0e14]' : 'bg-[var(--bg-primary)]';
-	const border = dark ? 'border-[#212836]' : 'border-[var(--border-color)]';
-	const primary = dark ? 'text-[#e6e9ef]' : 'text-[var(--text-primary)]';
-	const muted = dark ? 'text-[#8a93a6]' : 'text-[var(--text-muted)]';
-	const hoverAccent = dark ? 'hover:text-[#60a5fa]' : 'hover:text-[#1d4ed8]';
-	const linkClass = `inline-flex min-h-9 items-center font-mono-code text-[11px] uppercase tracking-[0.08em] ${muted} transition-colors ${hoverAccent} focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3b82f6]`;
-	const floatingButtonClass = `fixed z-50 grid h-10 w-10 place-items-center rounded-[4px] border transition-colors duration-150 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6] ${dark ? 'border-[#212836] bg-[#10141d] text-[#60a5fa] hover:border-[#3b82f6]/60 hover:text-[#60a5fa]' : 'border-[var(--border-color)] bg-[var(--bg-card)] text-[#1d4ed8] hover:border-[#3b82f6]/60 hover:text-[#1d4ed8]'}`;
+
+	const linkClass = "inline-flex min-h-9 items-center font-mono-code text-[11px] uppercase tracking-[0.08em] text-[var(--text-muted)] transition-colors hover:text-[#1d4ed8] dark:hover:text-[#60a5fa] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3b82f6]";
+	const floatingButtonClass = "fixed z-50 grid h-10 w-10 place-items-center rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-card)] text-[#1d4ed8] dark:text-[#60a5fa] transition-colors duration-150 motion-reduce:transition-none hover:border-[#3b82f6]/60 hover:text-[#1d4ed8] dark:hover:text-[#60a5fa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]";
 
 	useEffect(() => {
 		let frame = 0;
@@ -47,17 +40,14 @@ export function Footer() {
 
 	return (
 		<>
-			<footer className={`border-t ${border} ${sectionBg} transition-colors duration-200`}>
+			<footer className="border-t border-[var(--border-color)] bg-[var(--bg-primary)] transition-colors duration-200">
 				<div className="mx-auto max-w-[1200px] px-5 py-7 sm:py-8 lg:px-8">
 					<div className="grid gap-6 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:items-center md:gap-8">
 						<div>
-							<p
-								className={`text-base font-semibold tracking-[-0.025em] ${primary}`}
-								style={{ fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif' }}
-							>
+							<p className="font-display text-base font-semibold tracking-[-0.025em] text-[var(--text-primary)]">
 								{profileData.name}
 							</p>
-							<p className={`mt-1 text-sm ${muted}`}>Data Analyst &amp; Data Engineer</p>
+							<p className="mt-1 text-sm text-[var(--text-muted)]">Data Analyst &amp; Data Engineer</p>
 						</div>
 
 						<nav className="hidden md:block" aria-label="Footer navigation">
@@ -73,8 +63,8 @@ export function Footer() {
 						</nav>
 					</div>
 
-					<div className={`mt-6 flex flex-col gap-3 border-t ${border} pt-4 sm:mt-7 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between`}>
-						<p className={`font-mono-code text-[10px] leading-relaxed ${muted} ${showBackToTop ? 'pr-14' : ''} sm:pr-0`}>
+					<div className="mt-6 flex flex-col gap-3 border-t border-[var(--border-color)] pt-4 sm:mt-7 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+						<p className={`font-mono-code text-[10px] leading-relaxed text-[var(--text-muted)] ${showBackToTop ? 'pr-14' : ''} sm:pr-0`}>
 							&copy; {new Date().getFullYear()} {profileData.name}. All rights reserved.
 						</p>
 					</div>
