@@ -26,7 +26,7 @@ export function LeadershipSection() {
 							<span>{'// LEADERSHIP'}</span>
 						</p>
 						<p className="hidden items-center gap-2 font-mono-code text-[10px] uppercase tracking-[0.16em] sm:flex text-[var(--text-muted)]">
-							<span className="h-1.5 w-1.5 rounded-full bg-[#3b82f6]" aria-hidden="true" />
+							<span className="h-1.5 w-1.5 rounded-full bg-[#2563eb] dark:bg-[#3b82f6]" aria-hidden="true" />
 							Initiative · coordination · service
 						</p>
 					</div>

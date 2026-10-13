@@ -3,7 +3,6 @@
 import React from 'react';
 import { projectsData } from '@/data/projects';
 import {
-	Database,
 	FileCode2,
 	Cpu,
 	Terminal,
@@ -24,11 +23,6 @@ export function ProjectsSection() {
 			scopeType: string;
 		}
 	> = {
-		'snack-n-track': {
-			domainBadge: 'RELATIONAL DATABASE & ML',
-			icon: Database,
-			scopeType: 'ACADEMIC GRADUATION BUILD',
-		},
 		'downv': {
 			domainBadge: 'MEDIA STREAMS & CLI',
 			icon: FileCode2,
@@ -69,7 +63,7 @@ export function ProjectsSection() {
 							<span>{'// TECHNICAL.PROJECTS'}</span>
 						</div>
 						<div className="hidden sm:flex items-center gap-2 font-mono-code text-[10px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
-							<span className="h-1.5 w-1.5 rounded-full bg-[#3b82f6]" />
+							<span className="h-1.5 w-1.5 rounded-full bg-[#2563eb] dark:bg-[#3b82f6]" />
 							<span>SOURCE REPOSITORIES · {projectsData.length} BUILDS</span>
 						</div>
 					</div>
@@ -176,11 +170,11 @@ export function ProjectsSection() {
 													target="_blank"
 													rel="noopener noreferrer"
 													aria-label={`View ${project.title} source repository (opens in a new tab)`}
-													className="group inline-flex items-center gap-2 rounded-[4px] border border-[var(--border-color)] bg-[var(--bg-soft)] px-4 py-2 font-mono-code text-xs uppercase tracking-[0.1em] font-medium text-[var(--text-primary)] transition-colors duration-300 hover:border-[#3b82f6]/60 hover:text-[#1d4ed8] dark:hover:text-[#60a5fa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]"
+													className="group inline-flex items-center gap-2 rounded-[4px] border border-[#2563eb] bg-[#2563eb] hover:bg-[#1d4ed8] hover:border-[#1d4ed8] dark:border-[#2563eb] dark:bg-[#2563eb] dark:hover:border-[#1d4ed8] dark:hover:bg-[#1d4ed8] px-4 py-2 font-mono-code text-xs uppercase tracking-[0.1em] font-semibold text-white transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3b82f6]"
 												>
-													<GitBranch className="h-3.5 w-3.5 text-[#3b82f6]" />
+													<GitBranch className="h-3.5 w-3.5" aria-hidden="true" />
 													<span>VIEW SOURCE REPOSITORY</span>
-													<ArrowUpRight className="h-3.5 w-3.5 text-[var(--text-muted)] transition-[transform,translate,scale,rotate,color] duration-[150ms,150ms,150ms,150ms,300ms] group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+													<ArrowUpRight className="h-3.5 w-3.5 text-white/80 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white" aria-hidden="true" />
 												</a>
 											</div>
 										)}

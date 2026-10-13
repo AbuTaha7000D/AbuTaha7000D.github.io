@@ -110,7 +110,7 @@
 
 		--text-primary: #0f172a;
 		--text-secondary: #334155;
-		--text-muted: #64748b;
+		--text-muted: #475569;
 		--text-accent: #1d4ed8;
 
 		--accent-cyan: #2563eb;
@@ -194,6 +194,12 @@
 			animation-iteration-count: 1 !important;
 			transition-duration: 0.01ms !important;
 			scroll-behavior: auto !important;
+		}
+
+		.reveal,
+		.reveal.is-ready {
+			opacity: 1;
+			transform: none;
 		}
 	}
 
@@ -441,24 +447,5 @@ section[id] {
 	.scrollbar-thin::-webkit-scrollbar-thumb {
 		background: var(--border);
 		border-radius: 999px;
-	}
-}
-
-/* Reduced Motion Mode Support */
-@media (prefers-reduced-motion: reduce) {
-
-	*,
-	::before,
-	::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
-	}
-
-	.reveal,
-	.reveal.is-ready {
-		opacity: 1;
-		transform: none;
 	}
 }
