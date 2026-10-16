@@ -1,14 +1,8 @@
 import type { Metadata } from 'next';
-import { Geist, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
+import { JetBrains_Mono, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { profileData } from '@/data/profile';
-
-const geist = Geist({
-	subsets: ['latin'],
-	variable: '--font-geist-sans',
-	display: 'swap',
-});
 
 const jetbrainsMono = JetBrains_Mono({
 	subsets: ['latin'],
@@ -119,7 +113,7 @@ export default function RootLayout({
 				/>
 			</head>
 			<body
-				className={`${geist.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} antialiased min-h-screen`}
+				className={`${jetbrainsMono.variable} ${spaceGrotesk.variable} antialiased min-h-screen`}
 			>
 				<a
 					href="#main-content"

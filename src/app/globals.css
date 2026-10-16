@@ -5,7 +5,6 @@
 
 @theme {
 	/* Font families */
-	--font-sans: var(--font-geist-sans), system-ui, sans-serif;
 	--font-display: var(--font-space-grotesk), system-ui, sans-serif;
 	--font-mono: var(--font-mono), 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
@@ -206,7 +205,7 @@
 	body {
 		background-color: var(--bg-primary);
 		color: var(--text-primary);
-		font-family: var(--font-geist-sans, system-ui, sans-serif);
+		font-family: var(--font-space-grotesk, system-ui, sans-serif);
 		-webkit-font-smoothing: antialiased;
 		transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	}
