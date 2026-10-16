@@ -11,6 +11,7 @@ import {
 	Layers,
 	CheckCircle2,
 	Sparkles,
+	BarChart2,
 } from 'lucide-react';
 
 export function ProjectsSection() {
@@ -23,6 +24,11 @@ export function ProjectsSection() {
 			scopeType: string;
 		}
 	> = {
+		'superstore-sales-analysis': {
+			domainBadge: 'SALES & PROFITABILITY ANALYSIS',
+			icon: BarChart2,
+			scopeType: 'DATA ANALYSIS · SQL & PYTHON',
+		},
 		'downv': {
 			domainBadge: 'MEDIA STREAMS & CLI',
 			icon: FileCode2,
