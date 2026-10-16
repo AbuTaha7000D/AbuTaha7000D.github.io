@@ -63,12 +63,9 @@ export function AboutSqlQuery() {
 										<span className="h-2 w-2 rounded-full bg-[var(--border-subtle)]" />
 										<span className="h-2 w-2 rounded-full bg-[var(--border-subtle)]" />
 									</div>
-									<span className="font-mono-code text-[11px] uppercase tracking-[0.16em] text-[var(--text-secondary)] truncate">
-										engineer_id: mahmoud_ehab
-									</span>
 								</div>
 								<div className="shrink-0 font-mono-code text-[10px] uppercase tracking-[0.14em] text-[#1d4ed8] dark:text-[#60a5fa] font-semibold">
-									{'B.Sc. // 2025'}
+									{'Available_for_hire'}
 								</div>
 							</div>
 
