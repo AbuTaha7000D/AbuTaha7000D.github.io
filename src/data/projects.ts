@@ -29,6 +29,34 @@ export const projectsData: Project[] = [
 		github: 'https://github.com/AbuTaha7000D/salesAnalysis',
 	},
 	{
+		id: 'customer-retention-analysis',
+		title: 'Customer Retention & RFM Analysis',
+		subtitle: 'Personal Project | Data Analysis',
+		description:
+			'Analyzed customer retention, repeat purchasing, RFM segmentation, and cohort retention on the UCI Online Retail dataset using Python, SQL, and SQLite.',
+		problem:
+			'The UCI Online Retail data is raw transaction-level data with missing CustomerIDs, cancellations and returns, duplicate rows, and partial first and last months, so customer retention and value could not be measured without explicit, documented definitions for populations, monetary value, and observation windows.',
+		whatIBuilt:
+			'A two-stage Python pipeline (data preparation and SQLite loading) followed by six ordered, read-only SQL analyses covering data exploration, customer purchase summaries, RFM scoring, calendar-month cohort retention, and business findings, plus a script that renders four charts reconciled against the SQL results.',
+		technologies: ['Python', 'SQL', 'SQLite', 'Pandas', 'NumPy', 'Matplotlib', 'openpyxl'],
+		relevantConcepts: [
+			'RFM Segmentation',
+			'Cohort Retention Analysis',
+			'Repeat Purchase Analysis',
+			'Data Quality Flagging & Validation',
+			'Methodology Documentation',
+			'Reproducible Analytical Workflows',
+		],
+		highlights: [
+			'Built a reproducible pipeline where the preparation script adds quality flags and Gross Purchase Value and validates against verified audit counts, and the loading script rebuilds the SQLite table with SQL-level validation checks.',
+			'Wrote six ordered, read-only SQL analyses covering data exploration, customer purchase summaries, RFM scoring diagnostics and scoring, cohort retention, and business findings.',
+			'Produced a calendar-month cohort retention matrix that treats unobservable cohort-age cells as NULL/NA rather than zero.',
+			'Generated four charts (customer value concentration, RFM score distributions, cohort retention heatmap, and monthly new vs. repeat active customers) reconciled against SQL results.',
+			'Documented methodology choices: gross purchase value without netting returns, missing CustomerIDs excluded without imputation, duplicates flagged rather than deleted, and aggregate-only published results.',
+		],
+		github: 'https://github.com/AbuTaha7000D/customer-retention-analysis',
+	},
+	{
 		id: 'linux-postinstall',
 		title: 'Linux Post-Install Script',
 		subtitle: 'Personal Project | Bash Automation',
