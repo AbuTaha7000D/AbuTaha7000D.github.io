@@ -3,14 +3,14 @@ import { Project } from '@/types';
 export const projectsData: Project[] = [
 	{
 		id: 'superstore-sales-analysis',
-		title: 'Superstore Sales Analysis',
+		title: 'Superstore Sales & Profitability Analysis',
 		subtitle: 'Personal Project | Data Analysis',
 		description:
 			'Analyzed 10,194 order lines and 5,111 orders to investigate sales performance, profitability, discount patterns, and return rates across a retail superstore dataset.',
 		problem:
-			'The dataset contained multiple interrelated dimensions — product categories, regional segments, discount tiers, and return flags — with no consolidated view of which combinations drove profit losses or elevated return rates.',
+			'The dataset contained multiple interrelated dimensions — product categories, regional segments, discount tiers, and return flags — with no consolidated view of which combinations were associated with lower profitability or higher return rates.',
 		whatIBuilt:
-			'A reproducible Python and SQL analysis pipeline that loads the dataset into SQLite, runs structured queries to compute KPIs (revenue, profit margin, discount impact, return rate), and produces four validated Matplotlib charts covering sales trends, category profitability, discount distribution, and regional performance.',
+			'A reproducible Python and SQL analysis pipeline that loads the dataset into SQLite, runs structured queries to compute KPIs (revenue, profit margin, discount impact, return rate), and produces four validated Matplotlib charts covering monthly sales trends, category profitability, profit margin by discount band, and return rate by region.',
 		technologies: ['SQL', 'Python', 'Pandas', 'SQLite', 'Matplotlib'],
 		relevantConcepts: [
 			'Exploratory Data Analysis (EDA)',
@@ -22,8 +22,8 @@ export const projectsData: Project[] = [
 		],
 		highlights: [
 			'Processed 10,194 order lines and 5,111 distinct orders with validated business KPIs including revenue, profit margin, and return rate.',
-			'Produced four reproducible Matplotlib charts covering sales trends, category profitability, discount distribution, and regional performance.',
-			'Identified high-discount segments with negative average profit margins through SQL aggregation and Pandas groupby analysis.',
+			'Produced four reproducible Matplotlib charts covering monthly sales trends, category profitability, profit margin by discount band, and return rate by region.',
+			'Identified high-discount bands with negative aggregate profit margins through SQL aggregation over SQLite.',
 			'Documented all analytical findings and query logic for full reproducibility.',
 		],
 		github: 'https://github.com/AbuTaha7000D/salesAnalysis',
@@ -90,7 +90,7 @@ export const projectsData: Project[] = [
 		problem:
 			'Embedding chapter markers into video files without re-encoding typically requires crafting complex, non-intuitive FFmpeg metadata syntax by hand, risking errors and broken timestamps.',
 		whatIBuilt:
-			'A Go CLI toolkit composed of three dedicated utilities (addch, rmch, getch) that parse human-readable chapter syntax, validate timestamps, generate FFMETADATA1 files internally, and perform stream-copy remuxing with FFmpeg/FFprobe.',
+			'A Go CLI toolkit consisting of three dedicated utilities (addch, rmch, getch) that parse human-readable chapter syntax and validate timestamps. It adds, removes, and extracts chapters natively for ISO-BMFF (MP4/M4A/M4V/MOV/M4B) and Matroska (MKV/WebM/MKA/MK3D, including legacy ftyp-less QuickTime) containers without re-encoding or external tools; for other containers, it generates FFMETADATA1 internally and uses FFmpeg/FFprobe for stream-copy remuxing.',
 		technologies: ['Go (Golang)', 'FFmpeg', 'FFprobe', 'Shell / Make'],
 		relevantConcepts: [
 			'Go CLI Tool Development',
@@ -102,7 +102,7 @@ export const projectsData: Project[] = [
 		],
 		highlights: [
 			'Engineered a custom chapter file parser supporting millisecond precision, timestamp chronological validation, and UTF-8 BOM handling.',
-			'Used FFmpeg stream-copy remuxing to add chapters without re-encoding the video or audio streams.',
+			'Implemented native chapter embedding and removal for ISO-BMFF and Matroska containers without re-encoding, with FFmpeg stream-copy remuxing as a fallback for other containers.',
 			'Implemented clean 3-part architecture: addch (embed), rmch (strip), and getch (extract to stdout or sidecar).',
 			'Provided test suites (`make test`) and static analysis (`make vet`) covering unit and FFmpeg integration workflows.',
 		],
