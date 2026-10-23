@@ -57,6 +57,34 @@ export const projectsData: Project[] = [
 		github: 'https://github.com/AbuTaha7000D/customer-retention-analysis',
 	},
 	{
+		id: 'olist-ecommerce-data-pipeline',
+		title: 'Olist E-Commerce Data Pipeline',
+		subtitle: 'Personal Project | Data Analysis & Data Engineering',
+		description:
+			'Built a reproducible PostgreSQL and dbt pipeline for the nine-table Olist Brazilian e-commerce dataset, with contract-based validation, dimensional marts, and reconciliation tests.',
+		problem:
+			'The source is a collection of related CSV files with imperfect geolocation and category coverage. Reliable analysis requires validating the snapshot and its relationships, preserving consistent raw data on failures, and defining tested analytical models.',
+		whatIBuilt:
+			'A Python ingestion pipeline that verifies the pinned archive checksum, safely extracts and validates all nine CSVs, and transactionally replaces PostgreSQL raw tables while recording run status and counts. A dbt project builds nine staging views and nine analytical marts with data-quality and reconciliation tests.',
+		technologies: ['Python', 'PostgreSQL', 'SQL', 'dbt', 'Pytest', 'Podman Compose'],
+		relevantConcepts: [
+			'Contract-Driven Data Validation',
+			'Transactional Snapshot Ingestion',
+			'Dimensional Modeling',
+			'Data Quality & Reconciliation',
+			'Ingestion Ledger & Failure Handling',
+			'Database Write Safety',
+			'Reproducible Data Workflows',
+		],
+		highlights: [
+			'Validated and loaded 1,526,922 rows across nine source tables with matching source and database counts.',
+			'Built 18 dbt models and ran 255 data tests, including reconciliation checks across orders, items, payments, reviews, and geolocation.',
+			'Used transactional snapshot replacement so a failed load rolls back raw-table changes; recorded ingestion status and per-table counts in PostgreSQL.',
+			'Added guarded local orchestration that targets warehouse_test, verifies the source archive, and runs ingestion and dbt tests; production writes require explicit authorization.',
+		],
+		github: 'https://github.com/AbuTaha7000D/ecommerce-data-pipeline',
+	},
+	{
 		id: 'linux-postinstall',
 		title: 'Linux Post-Install Script',
 		subtitle: 'Personal Project | Bash Automation',
