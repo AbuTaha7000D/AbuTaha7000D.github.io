@@ -137,6 +137,35 @@ export const projectsData: Project[] = [
 		github: 'https://github.com/AbuTaha7000D/addch',
 	},
 	{
+		id: 'jxcel',
+		title: 'jxcel',
+		subtitle: 'Personal Project | Python CLI Tool',
+		description:
+			'A cross-platform Python command-line tool for discovering, validating, and exporting JSON datasets to formatted Excel workbooks, with column mapping and preview support.',
+		problem:
+			'JSON documents come in arbitrary shapes with nested objects, mixed value types, and very large numbers, so converting them to Excel with fixed-column, single-purpose scripts does not generalize and risks altering or losing values along the way.',
+		whatIBuilt:
+			'A Python package with a CLI that loads and validates JSON, discovers tabular object arrays, plans a schema, and generates .xlsx workbooks with openpyxl, validating each workbook before publishing it. It supports dataset selection by JSON Pointer, column mapping and exclusion, nested-object flattening, and list, preview, and dry-run modes.',
+		technologies: ['Python', 'openpyxl', 'JSON', 'Excel (.xlsx)'],
+		relevantConcepts: [
+			'Python CLI Development',
+			'JSON Parsing & Validation',
+			'Dataset Discovery & Schema Planning',
+			'Data Preservation & Fidelity',
+			'Safe File Publication',
+			'Python Packaging (pip / pipx)',
+		],
+		highlights: [
+			'Discovers tabular object arrays in general JSON documents without fixed columns or domain-specific assumptions.',
+			'Provides --list, --preview, and --dry-run modes that inspect datasets without creating workbooks or directories, plus repeatable --dataset, --column-map, and --exclude-map options.',
+			'Preserves data fidelity: strings stay strings, integers of 10**15 or larger are written as text with a warning, floats are never rounded, and formula-like strings are written as text.',
+			'Fails planning on out-of-range numbers, forbidden XML characters, or over-limit cell text instead of truncating, and aggregates warnings by code, dataset, and column.',
+			'Builds and validates a temporary workbook before replacing an existing file when --overwrite is used, with documented exit codes (0, 1, 2).',
+			'Packaged for installation with pip or pipx, exposing a jxcel command.',
+		],
+		github: 'https://github.com/AbuTaha7000D/jxcel',
+	},
+	{
 		id: 'downv',
 		title: 'DownV',
 		subtitle: 'Personal Project | Python CLI Tool',
